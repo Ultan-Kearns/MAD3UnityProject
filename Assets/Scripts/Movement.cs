@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class Movement : MonoBehaviour
 {
-    //variable for player speed
+      //variable for player speed
     public float speed = 3f;
     public float jump = 5f;
     // Start is called before the first frame update
     Rigidbody2D rb;
-    GameObject player = GameObject.Find("Player");
+    bool didJump = false;
+    int timer = 0;
     void Start()
     {
 
@@ -20,7 +23,19 @@ public class Movement : MonoBehaviour
     void Update()
     {
         PlayerMove();
-        PlayerJump(null);
+        if (timer  > 0)
+        {
+            timer--;
+            Debug.Log(timer);
+        }
+        if(timer == 0)
+        {
+            didJump = false;
+        }
+        if (timer == 0 && didJump == false && Input.GetKeyDown(KeyCode.UpArrow))
+        {
+             PlayerJump();
+        }
     }
     private void PlayerMove()
     {
@@ -31,15 +46,16 @@ public class Movement : MonoBehaviour
         rb.velocity = new Vector2(newXPos, rb.velocity.y);
     }
     //need to see if box collider is detecting collistions
-    void PlayerJump(Collision col)
+    void PlayerJump()
     {
         var deltaY = Input.GetAxis("Vertical");
         var posY = deltaY * jump;
-        if (col.gameObject.name == "player")
-        {
-            rb.velocity = new Vector2(rb.velocity.x, posY);
-        }
+        rb.velocity = new Vector2(rb.velocity.x, posY);
+        didJump = true;
+        timer = 20;
+        Debug.Log("IN JUMP");
     }
+    
 }
 
 
