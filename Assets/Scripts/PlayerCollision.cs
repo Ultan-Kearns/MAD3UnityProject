@@ -5,8 +5,13 @@ using UnityEngine;
 public class PlayerCollision : MonoBehaviour
 {
 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerStay2D(Collider2D col)
     {
-             Debug.Log("Collided");
+        if(col.gameObject.name == "Ground")
+        {
+            Debug.Log("Collided");
+
+        }
+        Debug.Log("Collided");
     }
 }
