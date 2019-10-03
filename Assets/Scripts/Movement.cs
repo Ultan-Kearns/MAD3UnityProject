@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     Rigidbody2D rb;
     bool didJump = false;
+    bool onGround = false;
     int timer = 0;
     void Start()
     {
@@ -32,11 +33,11 @@ public class Movement : MonoBehaviour
         {
             didJump = false;
         }
-        if (timer == 0 && didJump == false && Input.GetKeyDown(KeyCode.UpArrow))
+        if (onGround ==true  && Input.GetKeyDown(KeyCode.UpArrow))
         {
              PlayerJump();
         }
-    }
+     }
     private void PlayerMove()
     {
         //have an input from user
@@ -55,7 +56,14 @@ public class Movement : MonoBehaviour
         timer = 20;
         Debug.Log("IN JUMP");
     }
-    
+    void OnTriggerStay2D(Collider2D col)
+    {
+        if (col.gameObject.name == "Ground")
+        {
+            Debug.Log("Collided");
+            onGround = true;
+      }   
+    }
 }
 
 
