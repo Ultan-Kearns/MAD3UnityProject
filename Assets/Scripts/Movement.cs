@@ -11,8 +11,11 @@ public class Movement : MonoBehaviour
     public float jump = 5f;
     // Start is called before the first frame update
     Rigidbody2D rb;
-    bool didJump = false;
-    bool onGround = false;
+    bool didJump;
+    bool isGrounded;
+    public Transform isOnPlatform;
+    public float platformRadius;
+    public LayerMask checkLayerPlatform;
     int timer = 0;
     void Start()
     {
@@ -33,11 +36,19 @@ public class Movement : MonoBehaviour
         {
             didJump = false;
         }
-        if (onGround ==true  && Input.GetKeyDown(KeyCode.UpArrow))
-        {
-             PlayerJump();
-        }
+        
      }
+    private void FixedUpdate()
+    {
+        //use a circle collider on bottom of player to check if the player is on a platform
+        //takes in the platform positions the radius of the colldier and to see if player is on right layer
+        isGrounded = Physics2D.OverlapCircle(isOnPlatform.position, platformRadius, checkLayerPlatform);
+        Debug.Log(isGrounded);
+        if(isGrounded == true && Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            PlayerJump();
+        }
+    }
     private void PlayerMove()
     {
         //have an input from user
@@ -61,7 +72,7 @@ public class Movement : MonoBehaviour
         if (col.gameObject.name == "Ground")
         {
             Debug.Log("Collided");
-            onGround = true;
+          
       }   
     }
 }
