@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-      //variable for player speed
+    //variable for player speed
     public float speed = 3f;
     public float jump = 5f;
     // Start is called before the first frame update
@@ -19,7 +19,6 @@ public class Movement : MonoBehaviour
     int timer = 0;
     void Start()
     {
-
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -35,8 +34,7 @@ public class Movement : MonoBehaviour
         if(timer == 0)
         {
             didJump = false;
-        }
-        
+        }        
      }
     private void FixedUpdate()
     {
@@ -57,7 +55,7 @@ public class Movement : MonoBehaviour
         var newXPos = deltaX * speed;
         rb.velocity = new Vector2(newXPos, rb.velocity.y);
     }
-    //need to see if box collider is detecting collistions
+    //need to see if box collider is detecting collisions
     void PlayerJump()
     {
         var deltaY = Input.GetAxis("Vertical");
