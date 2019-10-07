@@ -25,28 +25,34 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GameObject player = GameObject.Find("Player");
+
         PlayerMove();
-        if (timer  > 0)
+        if (timer > 0)
         {
             timer--;
             Debug.Log(timer);
         }
-        if(timer == 0)
+        if (timer == 0)
         {
             didJump = false;
-        }        
-     }
-    private void FixedUpdate()
-    {
+        }
+
         //use a circle collider on bottom of player to check if the player is on a platform
         //takes in the platform positions the radius of the colldier and to see if player is on right layer
         isGrounded = Physics2D.OverlapCircle(isOnPlatform.position, platformRadius, checkLayerPlatform);
         Debug.Log(isGrounded);
-        if(isGrounded == true && Input.GetKeyDown(KeyCode.UpArrow))
+        if (isGrounded == true && Input.GetKeyDown(KeyCode.UpArrow))
         {
             PlayerJump();
         }
+        //check if player is off platform and height
+        if (player.transform.position.y <= -20 && isGrounded == false)
+        {
+            Debug.Log("Assume player is dead - EndGame");
+        }
     }
+
     private void PlayerMove()
     {
         //have an input from user
@@ -70,8 +76,8 @@ public class Movement : MonoBehaviour
         if (col.gameObject.name == "Ground")
         {
             Debug.Log("Collided");
-          
-      }   
+
+        }
     }
 }
 
