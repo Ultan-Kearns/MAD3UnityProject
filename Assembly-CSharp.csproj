@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Boundaries.cs" />
     <Compile Include="Assets\Scripts\GenerateBullets.cs" />
     <Compile Include="Assets\Scripts\GeneratePlatform.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
