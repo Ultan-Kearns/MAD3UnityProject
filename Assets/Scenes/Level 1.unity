@@ -751,7 +751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  jump: 20
+  jump: 10
   isOnPlatform: {fileID: 232506796}
   platformRadius: 0.3
   checkLayerPlatform:

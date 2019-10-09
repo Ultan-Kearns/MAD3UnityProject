@@ -28,21 +28,12 @@ public class Movement : MonoBehaviour
         GameObject player = GameObject.Find("Player");
 
         PlayerMove();
-        if (timer > 0)
-        {
-            timer--;
-            Debug.Log(timer);
-        }
-        if (timer == 0)
-        {
-            didJump = false;
-        }
-
+  
         //use a circle collider on bottom of player to check if the player is on a platform
         //takes in the platform positions the radius of the colldier and to see if player is on right layer
         isGrounded = Physics2D.OverlapCircle(isOnPlatform.position, platformRadius, checkLayerPlatform);
         Debug.Log(isGrounded);
-        if (isGrounded == true && Input.GetKeyDown(KeyCode.UpArrow))
+        if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
         {
             PlayerJump();
         }
@@ -65,19 +56,9 @@ public class Movement : MonoBehaviour
     void PlayerJump()
     {
         var deltaY = Input.GetAxis("Vertical");
-        var posY = deltaY * jump;
-        rb.velocity = new Vector2(rb.velocity.x, posY);
-        didJump = true;
-        timer = 20;
-        Debug.Log("IN JUMP");
-    }
-    void OnTriggerStay2D(Collider2D col)
-    {
-        if (col.gameObject.name == "Ground")
-        {
-            Debug.Log("Collided");
-
-        }
+        var posY =  jump;
+         rb.velocity = new Vector2(rb.velocity.x, posY);
+ 
     }
 }
 

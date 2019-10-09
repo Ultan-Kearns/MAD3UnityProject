@@ -13,8 +13,13 @@ public class PlatformMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         rb.velocity = Vector2.left * speed;
+        //Free up memory after the platform gets out of bounds
+        if(gameObject.transform.position.x <= -14)
+        {
+            Destroy(gameObject);
+        }
     }
 }
