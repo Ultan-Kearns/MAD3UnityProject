@@ -66,6 +66,8 @@
     <Compile Include="Assets\Scripts\GenerateBullets.cs" />
     <Compile Include="Assets\Scripts\GeneratePlatform.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
+    <Compile Include="Assets\Scripts\PlatformMovement.cs" />
+    <Compile Include="Assets\Scripts\PlatformSpawn.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/sl0th/Documents/github/MAD3UnityProject/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
