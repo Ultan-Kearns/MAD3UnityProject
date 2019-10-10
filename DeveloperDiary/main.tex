@@ -1,4 +1,5 @@
 \documentclass{report}
+\usepackage[margin=2.5in]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{listings}
@@ -6,7 +7,7 @@
 \usepackage{amsmath}
 \title{Developer Diary}
 \author{Ultan Kearns}
-\date{September 2019}
+\date{\today}
 \begin{document}
 \maketitle
 \tableofcontents
@@ -32,13 +33,20 @@ The aim of the game is to survive wave after wave of bullets and accumulate as m
  \section{Experience with designer}
  The designer of the game was very helpful with all of my questions which were limited due to a very comprehensive design document and test plan.  He was also very quick to design the game assets and send them to me promptly.  I found working with the designer a great experience which will add to my skills as a developer, as dealing with clients is one of the key skills a developer can have in the modern world of software development.
 \chapter{Planning}
-\subsection{Reading the design document}
+\section{Reading the design document}
 Before I started coding I read the design document extensively and made a note of all the requirements which the game must meet.  I met with the designer to discuss the key requirements of the game and discussed how they would like me to implement them.
+\section{Brainstorming}
+I brainstormed some ideas with the designer before I began implementing them into the game.  I suggested that the background and music could change when the player reached a certain wave so that the player was informed of the increasing difficulty.  I found the designer was very receptive to my ideas and welcomed them into the game. I also started brainstorming what functionality I could add to the game and which way I could implement the designers functionality in a way that felt fluid and intuitive to the player.  An example of my brainstorming is where I decided that the player should only have a single jump as opposed to a double or triple jump to add difficulty to the game, I also added an overlap circle to detect the player is on a platform and that they can only jump when on a platform.  I found that brainstorming ideas really helped me to implement and improve the game's functionality. 
 \section{Beginning the project}
 I started this project off with brainstorming ideas of how to implement the various features that the designer had specified in the design document. I thought of how best to implement them so that the movement and gameplay would seem fluid and the controls intuitive. I also brainstormed what type of features could be improved upon and discussed these with the designer. I read the design document a few times to get the general feel for the game and to ensure I understood all the requirements for the game.  I began by making a simple prototype and slowly improving upon it gradually.  I discussed any changes I wished to make with the designer and ensured that they agreed with the changes before I began implementing them into the game.
 \chapter{Implementation}
 \section{Beginning implementation}
-
 \subsection{Starting to code}
 When I started to code the project I had many issues such as boxcolliders not working and various other problems luckily these weren't  hard to solve as the unity documentation site here:\href{https://docs.unity3d.com/Manual/index.html}{Link to Unity documentation} is fairly extensive.  I was able to solve a vast majority of these problems by analyzing code from the labs and was able to find solutions to my specific problems within the game I'm developing. 
+\subsection{Issues that arised}
+When I was beginning the project I had many issues with the platforms, I had issues with getting them to move in a way that was fluid, I had issues with spawning them and I had issues where the platform would just fall.  Slowly as I learned more about unity I realized that I could fix these issues simply. I started off by getting them to move by using a \textbf{rigidbody2d} and a velocity to it to push it to the left. I also used the lab code to help with spawning platforms and was able to solve the falling issue by making the platforms kinematic.
+\\
+I also was finding it hard to implement screen boundaries I used lab code as a template to help me find a solution which fit the game.  I added a boundary in the x axis and the y axis to ensure that the player cannot move infinitely in either axis.
+\chapter{Testing}
+\chapter{Conclusion}
 \end{document}
