@@ -5,3 +5,5 @@ This is a 2d platformer game programmed in Unity. The object of the game is to s
 The Implementation of the project will be discussed in the Developer Diary.
 ## Platforms 
 + Windows
++ Linux
++ Mac OS
