@@ -15,6 +15,8 @@ public class PlatformMovement : MonoBehaviour
 
     private void Update()
     {
+        if (gameObject.name == "Bullet")
+            speed = 2.5f;
         rb.velocity = Vector2.left * speed;
         //Free up memory after the platform gets out of bounds
         if(gameObject.transform.position.x <= -14)
