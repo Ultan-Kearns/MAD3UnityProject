@@ -21,7 +21,7 @@ public class GeneratePlatform : MonoBehaviour
     {
         var random = new System.Random();
         GameObject platform = GameObject.Find("Platform");
-        Vector3 newPos = new Vector3(random.Next(0, 100), random.Next(0, 10), 0);
+        Vector3 newPos = new Vector3(random.Next(0, 30), random.Next(0, 10), 0);
         Quaternion rotation = new Quaternion(0, 0, 0, 0);
         var clone = Instantiate(platform, newPos, rotation);
         //use posX variable to set the position of clones

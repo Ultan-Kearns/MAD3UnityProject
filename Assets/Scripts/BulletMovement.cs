@@ -2,27 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlatformMovement : MonoBehaviour
+public class BulletMovement : MonoBehaviour
 {
-    //change this as it game gets more difficult
-    //gets too difficult if > 2.5
-    private float speed = 0.5f;
-    private Rigidbody2D rb;  
-
+    Rigidbody2D rb;
+    float speed = 10f;
+    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
         rb.velocity = Vector2.left * speed;
-        Debug.Log(rb.gameObject.name);
+ 
         //Free up memory after the platform gets out of bounds
         if (gameObject.transform.position.x <= -14)
         {
             Destroy(gameObject);
+        }
+        if(gameObject.transform.position.x <= GameObject.Find("Player").transform.position.x)
+        {
+            Destroy(GameObject.Find("Player"));
         }
     }
 }
