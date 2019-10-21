@@ -11,15 +11,15 @@
 \begin{document}
 \maketitle
 \tableofcontents
-\input{chapters.tex}
+\chapter{Introduction}
 \section{What is this game?}
 The game is a 2D platformer called Quickfire.  
 The object of the game is 
 to survive as many rounds as possible while bullets come flying at the player, the bullets will get faster with each level. At the beginning of the game the player will have a set number of lives and the object of the game is to avoid dying and to get a high score.
 \subsection{What is a platformer?}
-A platformer is a game in which the objective of the game is to jump on platforms and reach the end of the level.  There are usually many obstacles which the player must face in order to advance through the level usually these are gaps, spikes or any other form of object which will either kill the player or damage his health.
+A platformer is a game in which the objective of the game is to jump on platforms and reach the end of the level\cite{Platformer}.  There are usually many obstacles which the player must face in order to advance through the level usually these are gaps, spikes or any other form of object which will either kill the player or damage his health.
 \subsection{Not a typical platformer}
-This game deviates from the standard platformer in a very original way as it has bullets which the player must avoid in order to progress through the level.  If the player is hit by a bullet or the player falls off the platform the game end and the players score is saved as the highscore if they have a score greater than the previous high score.
+This game deviates from the standard platformer\cite{Platformer} in a very original way as it has bullets which the player must avoid in order to progress through the level.  If the player is hit by a bullet or the player falls off the platform the game end and the players score is saved as the highscore if they have a score greater than the previous high score.
 \subsection{Aim of game}
 The aim of the game is to survive wave after wave of bullets and accumulate as many points as possible.  The game also will get progressively more difficult as the player advances in order to give more of a challenge to skilled players.
 \section{About this game}
@@ -44,9 +44,38 @@ I started this project off with brainstorming ideas of how to implement the vari
 \subsection{Starting to code}
 When I started to code the project I had many issues such as boxcolliders not working and various other problems luckily these weren't  hard to solve as the unity documentation site here:\href{https://docs.unity3d.com/Manual/index.html}{Link to Unity documentation} is fairly extensive.  I was able to solve a vast majority of these problems by analyzing code from the labs and was able to find solutions to my specific problems within the game I'm developing. 
 \subsection{Issues that arised}
-When I was beginning the project I had many issues with the platforms, I had issues with getting them to move in a way that was fluid, I had issues with spawning them and I had issues where the platform would just fall.  Slowly as I learned more about unity I realized that I could fix these issues simply. I started off by getting them to move by using a \textbf{rigidbody2d} and a velocity to it to push it to the left. I also used the lab code to help with spawning platforms and was able to solve the falling issue by making the platforms kinematic.
+When I was beginning the project I had many issues with the platforms, I had issues with getting them to move in a way that was fluid, I had issues with spawning them and I had issues where the platform would just fall.  Slowly as I learned more about unity I realized that I could fix these issues simply. I started off by getting them to move by using a \textbf{rigidbody2d}\cite{RigidBody} and a velocity to it to push it to the left. I also used the lab code to help with spawning platforms and was able to solve the falling issue by making the platforms kinematic.
 \\
 I also was finding it hard to implement screen boundaries I used lab code as a template to help me find a solution which fit the game.  I added a boundary in the x axis and the y axis to ensure that the player cannot move infinitely in either axis.
+\subsection{Difficulty}
+The difficulty of the game represented a challenge as I did not want it to be too hard or too easy, while implementing the game I tested each feature implemented to ensure that the game was difficult enough to be entertaining but not too difficult as to turn away players.  I began by implementing the basics of the game then refined the difficulty bit by bit and then tested it by playing the game and determining if it was too hard.
+\chapter{Methodology}
+\section{Debating Methodologies}
+\subsection{Agile}
+Agile came out on top when I was choosing methodologies for this project as it is very robust and suited to designing a game as each stage can be revisited and it's easy to write functions I needed to implement in the game and create sprints.
+\subsection{Waterfall}
+I debated using the waterfall methodology for this project but decided against it as each stage must be completed before moving onto the next stage and because once you finish a stage you can no longer revisit it.  Needless to say this methodology did not make the cut for this project.
+\section{Why Agile?}
+For this project I used the Agile\cite{Agile} programming methodology, I had a series of sprints\cite{Sprint} in which I would program functionality in the game and get a certain part of the game working. I found the Agile methodology very suited to this project as there was a lot to get done in a relatively short time-frame.  I found the sprints particularly useful in terms of time management and it helped keep my other projects organised while I coded the game.  The Agile methodology is also extremely popular in modern software development and is ubiquitous in industry.  I thought I could use this project to gain valuable experience using the Agile methodology and to witness it's effects on productivity.  Agile helped me during the course of this project by delivering an iterative approach in which I got something done in each sprint.  It really motivated me to work more as I could see some of the fruits of my labour come to life at the end of each sprint.  I also took advantage of Agile's ability to change during the course of development as I sometimes found myself wanting to redesign certain apsects of the game and improve upon them.
+\chapter{Design}
+\section{Background}
+I decided on using multiple backgrounds which will change when a player reaches a certain wave.  I wanted to convey to the player that their was a sense of urgency that must not be ignored upon reaching higher waves.  I decided to make the beginning waves background nice, calm and cheerful as opposed to dark, sinister and uninviting which I saved for later levels.
+\section{Music}
+Music is a very important aspect in many games as it can convey the mood to the player.  I chose soft cheerful music for the start then as the waves increased I changed to much harsher and less comforting music so that the player would realize that they are progressing into the game and that the game will get harder the more they progress.
+\section{Menus}
+The menus are fairly basic and offer all the functionality that the designer outlined in the specification.  All the options are fairly straight forward as to not confuse the player before they have even started the game.  I wanted to also make the menus as intuitive as possible so that the player did not have to spend ages figuring out which options were under which section.
 \chapter{Testing}
+\section{Beginning Testing}
+I first started by reviewing the test plan and seeing which functionality I needed to implement. I then decided to implement the requirements as specified in the design document, once I finished the basic design of the game then I got into testing the functionality developed.
+\section{Testing Difficulty}
+Once I had the basic functionality for the game I began testing the difficulty.  I had to ensure that the player could actually reach the platforms that spawned and that they would not spawn too far away from the player.  I also had to account for the bullets and ensure that they moved at the right speed for each wave and ensure that they did not move or spawn in a way that the player had no reasonable chance to avoid them.
+\section{Testing Gameplay}
+When I had accounted for the difficulty I began testing the gameplay at first I played the game myself and then I enlisted the help of my friends to ask them if they thought it was too hard.  I found their constructive criticism very useful and I redesigned the game based on their critiques.  I wanted to ensure that the game prevented a challenge, that while not being so easy as to lose the interest of a player, would also not be too hard as to deter them from playing entirely. 
 \chapter{Conclusion}
+\section{What I learned}
+I learned a lot about game development from this project.  I also learned a lot about the Unity game engine.  At first I needed to learn a lot about the game engine and one of the sources that really helped me was the unity docs \cite{UnityDocs}
+\section{Effect Agile had on the project}
+\section{Test Plan}
+\bibliographystyle{ieeetr}
+\bibliography{references}
 \end{document}
