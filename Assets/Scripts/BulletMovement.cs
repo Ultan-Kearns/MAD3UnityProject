@@ -22,7 +22,8 @@ public class BulletMovement : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if(gameObject.transform.position.x <= GameObject.Find("Player").transform.position.x)
+        //this is temporary need to get collider on player
+        if(gameObject.transform.position.x == GameObject.Find("Player").transform.position.x)
         {
             Destroy(GameObject.Find("Player"));
         }
