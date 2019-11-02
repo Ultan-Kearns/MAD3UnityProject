@@ -6,7 +6,7 @@ public class PlatformMovement : MonoBehaviour
 {
     //change this as it game gets more difficult
     //gets too difficult if > 2.5
-    private float speed = 0.5f;
+    private float speed = 3;
     private Rigidbody2D rb;  
 
     void Start()

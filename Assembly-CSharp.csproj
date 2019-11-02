@@ -65,7 +65,6 @@
     <Compile Include="Assets\Scripts\Boundaries.cs" />
     <Compile Include="Assets\Scripts\BulletMovement.cs" />
     <Compile Include="Assets\Scripts\GenerateBullets.cs" />
-    <Compile Include="Assets\Scripts\GeneratePlatform.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
     <Compile Include="Assets\Scripts\PlatformMovement.cs" />
