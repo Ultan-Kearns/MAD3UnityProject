@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -50,8 +50,7 @@ public class Movement : MonoBehaviour
         if (player.transform.position.y <= -20 && isGrounded == false)
         {
             Debug.Log("Assume player is dead - EndGame");
-            Debug.Log("IN");
-            Dead();
+             Dead();
         }
     }
 
@@ -61,6 +60,7 @@ public class Movement : MonoBehaviour
         audio.Play();
          Debug.Log(death);
         //also change to gameover screen
+        SceneManager.LoadScene(2);
     }
 
     private void PlayerMove()

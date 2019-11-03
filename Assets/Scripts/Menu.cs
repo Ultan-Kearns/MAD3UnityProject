@@ -6,11 +6,19 @@ public class Menu : MonoBehaviour
 {
     public void Play()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); 
+        SceneManager.LoadScene(1); 
     }
     public void Quit()
     {
         Debug.Log("this should quit game");
-        Application.Quit();
+        //if in game over screen
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            SceneManager.LoadScene(0);
+        }
+        else
+        {
+            Application.Quit();
+        }
     }
 }
