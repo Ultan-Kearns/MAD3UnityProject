@@ -111,10 +111,10 @@ MonoBehaviour:
     y: 30
     width: 1366
     height: 635
-  m_MinSize: {x: 679, y: 494}
-  m_MaxSize: {x: 14002, y: 14044}
+  m_MinSize: {x: 681, y: 494}
+  m_MaxSize: {x: 14004, y: 14044}
   vertical: 0
-  controlID: 11903
+  controlID: 8111
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 494}
   m_MaxSize: {x: 10002, y: 14044}
   vertical: 1
-  controlID: 11904
+  controlID: 8112
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 222}
   m_MaxSize: {x: 8004, y: 4022}
   vertical: 0
-  controlID: 11905
+  controlID: 8090
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -382,9 +382,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 125f0000
-      m_LastClickedID: 24338
-      m_ExpandedIDs: d6d8ffffd6d9fffffcd9ffffe6deffff0cdfffff4edfffff34e0ffff6ae0ffff98e0ffffe6e1ffff1ee2ffff9ee5ffffd8e5ffff66e6ffff3ae7ffff64e7ffff8ee7fffff6e9ffff1eeaffffaeeaffffd4eaffffb6efffffb0f1ffff14f2ffff82f4ffff84f4ffff8af4ffff8ef4ffffdef4ffff30f5ffff56f5ffff78f5ffff74fbffff283800007e3900009e390000743a0000b23a00007a4000009a400000c0410000fe41000086450000a64500007c460000ba46000050470000464800006048000084480000da4a00007452000098520000aa5200002e530000585e0000085f0000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: b8faffffd6fafffff6faffff74fbffff84350000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -444,9 +444,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 337.5, y: 215.5, z: 0}
+    m_Target: {x: 10.002596, y: 4.9000015, z: 10}
     speed: 2
-    m_Value: {x: 337.5, y: 215.5, z: 0}
+    m_Value: {x: 10.002596, y: 4.9000015, z: 10}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -479,9 +479,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 682.85846
+    m_Target: 211.20026
     speed: 2
-    m_Value: 682.85846
+    m_Value: 211.20026
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -572,20 +572,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\sl0th\Documents\github\MAD3UnityProject
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: e02d0000
-    m_LastClickedID: 11744
-    m_ExpandedIDs: 00000000982d0000142f0000aa2f0000623000000a31000048320000f032000000ca9a3b
+    m_SelectedIDs: 1c320000
+    m_LastClickedID: 12828
+    m_ExpandedIDs: 00000000982d0000142f0000aa2f0000623000000a3100004a320000f232000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -613,7 +613,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000982d0000142f0000aa2f0000623000000a31000048320000f032000000ca9a3b
+    m_ExpandedIDs: 00000000982d0000142f0000aa2f0000623000000a3100004a320000f232000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

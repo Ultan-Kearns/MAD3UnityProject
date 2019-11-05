@@ -47,7 +47,7 @@ public class Movement : MonoBehaviour
            
         }
         //check if player is off platform and height
-        if (player.transform.position.y <= -20 && isGrounded == false)
+        if (player.transform.position.y <= -20 && isGrounded == false )
         {
             Debug.Log("Assume player is dead - EndGame");
              Dead();
