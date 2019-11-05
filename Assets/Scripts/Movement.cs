@@ -21,6 +21,8 @@ public class Movement : MonoBehaviour
       public AudioSource audio;
     public AudioClip death;
     public AudioClip jumpSound;
+    GameObject player;
+    public Sprite playerJump,playerModel;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -33,7 +35,6 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject player = GameObject.Find("Player");
 
         PlayerMove();
   
@@ -44,7 +45,7 @@ public class Movement : MonoBehaviour
         if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
         {
             PlayerJump();
-           
+            player = GameObject.Find("Player");
         }
         //check if player is off platform and height
         if (player.transform.position.y <= -20 && isGrounded == false )
@@ -74,9 +75,12 @@ public class Movement : MonoBehaviour
     //need to see if box collider is detecting collisions
     void PlayerJump()
     {
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = playerJump;
         var posY =  jump;
         rb.velocity = new Vector2(rb.velocity.x, posY);
         audio.Play();
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = playerModel;
+
     }
 }
 

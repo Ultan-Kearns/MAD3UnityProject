@@ -3,7 +3,12 @@ guid: f8be37bbec22c3b4ba8dbc3f2cffc608
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - isOnPlatform: {instanceID: 0}
+  - audio: {instanceID: 0}
+  - death: {instanceID: 0}
+  - jumpSound: {instanceID: 0}
+  - playerJump: {fileID: 21300000, guid: 11f6ac2441bfcba45846adfe0752f5fe, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
