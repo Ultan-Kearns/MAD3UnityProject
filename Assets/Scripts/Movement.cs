@@ -18,11 +18,11 @@ public class Movement : MonoBehaviour
     public float platformRadius;
     public LayerMask checkLayerPlatform;
     //will hold audio for player
-      public AudioSource audio;
+    public AudioSource audio;
     public AudioClip death;
     public AudioClip jumpSound;
     GameObject player;
-    public Sprite playerJump,playerModel;
+    public Sprite playerJump, playerModel;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -37,7 +37,7 @@ public class Movement : MonoBehaviour
     {
 
         PlayerMove();
-  
+
         //use a circle collider on bottom of player to check if the player is on a platform
         //takes in the platform positions the radius of the colldier and to see if player is on right layer
         isGrounded = Physics2D.OverlapCircle(isOnPlatform.position, platformRadius, checkLayerPlatform);
@@ -48,10 +48,10 @@ public class Movement : MonoBehaviour
             player = GameObject.Find("Player");
         }
         //check if player is off platform and height
-        if (player.transform.position.y <= -20 && isGrounded == false )
+        if (player.transform.position.y <= -20 && isGrounded == false)
         {
             Debug.Log("Assume player is dead - EndGame");
-             Dead();
+            Dead();
         }
     }
 
@@ -59,7 +59,7 @@ public class Movement : MonoBehaviour
     {
         audio.clip = death;
         audio.Play();
-         Debug.Log(death);
+        Debug.Log(death);
         //also change to gameover screen
         SceneManager.LoadScene(2);
     }
@@ -76,12 +76,10 @@ public class Movement : MonoBehaviour
     void PlayerJump()
     {
         this.gameObject.GetComponent<SpriteRenderer>().sprite = playerJump;
-        var posY =  jump;
+        var posY = jump;
         rb.velocity = new Vector2(rb.velocity.x, posY);
         audio.Play();
         this.gameObject.GetComponent<SpriteRenderer>().sprite = playerModel;
 
     }
 }
-
-
