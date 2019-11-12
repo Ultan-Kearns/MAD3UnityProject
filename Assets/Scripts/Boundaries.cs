@@ -7,8 +7,7 @@ public class Boundaries : MonoBehaviour
     // get the main camera
     // get the bounds of it (X,Y) - half the size
     // use Mathf.Clamp to compare the min, max to the current x
-
-     public Camera mainCamera;
+ 
 
      private Vector2 boundary;
     private float playerWidth;
@@ -17,11 +16,10 @@ public class Boundaries : MonoBehaviour
     void Start()
     {
         // Setup boundary to ensure player does not go beyond screen width
-        //make screen slightly bigger
-        boundary = mainCamera.ScreenToWorldPoint(
-                                new Vector3(Screen.width * 1.1f,
+        boundary = Camera.main.ScreenToWorldPoint(
+                                new Vector3(Screen.width,
                                             Screen.height,
-                                            mainCamera.transform.position.z));
+                                            Camera.main.transform.position.z));
          playerWidth = gameObject.GetComponent<SpriteRenderer>().bounds.extents.x;
         Debug.Log(boundary);
          }
@@ -29,14 +27,17 @@ public class Boundaries : MonoBehaviour
     //need to check player is in bounds after player moves
     private void LateUpdate()
     {
-        Vector3 viewPos = transform.position;
+        Vector3 viewPosition = transform.position;
         // find the position of X and clamp
-        viewPos.x = Mathf.Clamp(viewPos.x,
-                                boundary.x * -1 + playerWidth,
-                                boundary.x - playerWidth);
-        Debug.Log(boundary.x);
+        viewPosition.x = Mathf.Clamp(viewPosition.x,
+                                Screen.width,
+                                Screen.width * -1);
+        viewPosition.x = Mathf.Clamp(viewPosition.y,
+                        Screen.height,
+                        Screen.height * -1);
+  
         //set transform to view position to ensure player doesn't go past boundary
-        transform.position = viewPos;
+        transform.position = viewPosition;
     }
 }
 

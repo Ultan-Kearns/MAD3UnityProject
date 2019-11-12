@@ -18,11 +18,13 @@ public class Movement : MonoBehaviour
     public float platformRadius;
     public LayerMask checkLayerPlatform;
     //will hold audio for player
-    public AudioSource audio;
-    public AudioClip death;
-    public AudioClip jumpSound;
+    private AudioSource audio;
+    private AudioClip death;
+    private AudioClip jumpSound;
     GameObject player;
     public Sprite playerJump, playerModel;
+    //change with difficulty - for lives
+    public static int hits = 0;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -30,6 +32,7 @@ public class Movement : MonoBehaviour
         audio = GetComponent<AudioSource>();
         //set the clip to be this initially
         audio.clip = jumpSound;
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
@@ -45,7 +48,6 @@ public class Movement : MonoBehaviour
         if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
         {
             PlayerJump();
-            player = GameObject.Find("Player");
         }
         //check if player is off platform and height
         if (player.transform.position.y <= -20 && isGrounded == false)
@@ -57,9 +59,7 @@ public class Movement : MonoBehaviour
 
     private void Dead()
     {
-        audio.clip = death;
-        audio.Play();
-        Debug.Log(death);
+     
         //also change to gameover screen
         SceneManager.LoadScene(2);
     }
@@ -75,11 +75,19 @@ public class Movement : MonoBehaviour
     //need to see if box collider is detecting collisions
     void PlayerJump()
     {
-        this.gameObject.GetComponent<SpriteRenderer>().sprite = playerJump;
+
         var posY = jump;
         rb.velocity = new Vector2(rb.velocity.x, posY);
-        audio.Play();
-        this.gameObject.GetComponent<SpriteRenderer>().sprite = playerModel;
+        audio.Play(); 
 
+    }
+    public static void setHits(int hit)
+    {
+        hits += hit;
+        Debug.Log("hits " + hits);
+    }
+    public static int getHits()
+    {
+        return hits;
     }
 }

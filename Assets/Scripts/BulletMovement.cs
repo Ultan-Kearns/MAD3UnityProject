@@ -25,10 +25,15 @@ public class BulletMovement : MonoBehaviour
         }
      
     }
+ //need to allow bullets to pass through player
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("dead");
+        Movement.setHits(1);
         //on collision end game
-        SceneManager.LoadScene(2);
+        if (Movement.getHits() == 3)
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 }
