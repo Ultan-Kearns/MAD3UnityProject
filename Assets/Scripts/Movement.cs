@@ -24,7 +24,7 @@ public class Movement : MonoBehaviour
     GameObject player;
     public Sprite playerJump, playerModel;
     //change with difficulty - for lives
-    public static int hits = 0;
+    public static int lives = 3;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -81,13 +81,13 @@ public class Movement : MonoBehaviour
         audio.Play(); 
 
     }
-    public static void setHits(int hit)
+    public static void decrementLives(int hit)
     {
-        hits += hit;
-        Debug.Log("hits " + hits);
+        lives -= hit;
+        Debug.Log("hits " + lives);
     }
-    public static int getHits()
+    public static int getLives()
     {
-        return hits;
+        return lives;
     }
 }
