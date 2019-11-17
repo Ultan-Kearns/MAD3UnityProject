@@ -18,7 +18,7 @@ public class PlatformMovement : MonoBehaviour
     private void Update()
     {
         rb.velocity = Vector2.left * speed;
-        Debug.Log(rb.gameObject.name);
+          Debug.Log(rb.gameObject.name);
         //Free up memory after the platform gets out of bounds
         if (gameObject.transform.position.x <= -14)
         {

@@ -17,7 +17,7 @@ public class GenerateBullets : MonoBehaviour
         //instantiate the bullet
         GameObject clone = Instantiate(bullet);
         //set the position of new bullet
-        clone.transform.position = new Vector2(11, Random.Range(2, 10));
+        clone.transform.position = new Vector2(Random.Range(11,20), Random.Range(0, 11));
     }
     IEnumerator bulletWave()
     {

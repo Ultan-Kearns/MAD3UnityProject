@@ -19,7 +19,6 @@ public class Movement : MonoBehaviour
     public LayerMask checkLayerPlatform;
     //will hold audio for player
     private AudioSource audio;
-    private AudioClip death;
     private AudioClip jumpSound;
     GameObject player;
     public Sprite playerJump, playerModel;
