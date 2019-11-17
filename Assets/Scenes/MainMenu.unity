@@ -2789,8 +2789,9 @@ GameObject:
   - component: {fileID: 1743124594}
   - component: {fileID: 1743124593}
   - component: {fileID: 1743124592}
+  - component: {fileID: 1743124595}
   m_Layer: 5
-  m_Name: Dropdown
+  m_Name: Difficulty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2873,6 +2874,8 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Hard
       m_Image: {fileID: 0}
+    - m_Text: IRL
+      m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2917,6 +2920,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1743124590}
   m_CullTransparentMesh: 0
+--- !u!114 &1743124595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743124590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9df35a447ca75a4195935db6efbbed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dd: {fileID: 1743124592}
 --- !u!1 &1757363532
 GameObject:
   m_ObjectHideFlags: 0
@@ -3338,7 +3354,7 @@ GameObject:
   - component: {fileID: 2074589424}
   - component: {fileID: 2074589423}
   m_Layer: 5
-  m_Name: Difficulty
+  m_Name: DifficultyHeading
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

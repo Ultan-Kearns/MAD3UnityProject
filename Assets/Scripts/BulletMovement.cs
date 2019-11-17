@@ -7,6 +7,7 @@ public class BulletMovement : MonoBehaviour
 {
     Rigidbody2D rb;
     float speed = 10f;
+    int score = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,8 @@ public class BulletMovement : MonoBehaviour
         if (gameObject.transform.position.x <= -14)
         {
             Destroy(gameObject);
+            score += 10;
+
         }
      
     }
@@ -31,8 +34,9 @@ public class BulletMovement : MonoBehaviour
         Debug.Log("hit");
         Movement.decrementLives(1);
         Destroy(gameObject);
+        //May insert audio here to notify user that they have been hit
         //on collision end game
-        if (Movement.getLives() == 0)
+        if (Movement.getLives() < 0)
         {
             SceneManager.LoadScene(2);
         }

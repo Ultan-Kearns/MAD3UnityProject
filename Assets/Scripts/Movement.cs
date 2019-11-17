@@ -24,7 +24,7 @@ public class Movement : MonoBehaviour
     GameObject player;
     public Sprite playerJump, playerModel;
     //change with difficulty - for lives
-    public static int lives = 3;
+    public static int lives;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
