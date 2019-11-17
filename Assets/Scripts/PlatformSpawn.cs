@@ -17,7 +17,7 @@ public class PlatformSpawn : MonoBehaviour
         //instantiate the platform
         GameObject clone = Instantiate(platform);
         //set the position of new platform
-        clone.transform.position = new Vector2(Random.Range(0,11), Random.Range(0, 10));
+        clone.transform.position = new Vector2(Random.Range(0,11) + platform.transform.position.x, Random.Range(0, 10) + 2);
 
      }
     IEnumerator PlatformWave()

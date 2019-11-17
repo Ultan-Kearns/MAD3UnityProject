@@ -23,8 +23,8 @@ public class Movement : MonoBehaviour
     private AudioClip jumpSound;
     GameObject player;
     public Sprite playerJump, playerModel;
-    //change with difficulty - for lives
-    public static int lives;
+    //change with difficulty - for lives default 2 lives
+    public static int lives = 2;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();

@@ -16,7 +16,7 @@ public class Difficulty : MonoBehaviour
             onChange(dd);
             ddText = dd.value.ToString().ToLower();
             setDifficulty(ddText);
-        });        
+        });
     }
 
     // Update is called once per frame
