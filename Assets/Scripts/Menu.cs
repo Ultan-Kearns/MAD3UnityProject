@@ -14,6 +14,8 @@ public class Menu : MonoBehaviour
         //if in game over screen
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
+            //reset difficulty to medium on restart
+            Difficulty.setDifficulty("1");
             SceneManager.LoadScene(0);
         }
         else

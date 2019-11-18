@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlatformSpawn : MonoBehaviour
 {
     public GameObject platform;
-    float delay = 2f;
+    float delay = 2.5f;
     public void Start()
     {
         //start coroutine
@@ -17,7 +17,7 @@ public class PlatformSpawn : MonoBehaviour
         //instantiate the platform
         GameObject clone = Instantiate(platform);
         //set the position of new platform
-        clone.transform.position = new Vector2(Random.Range(0,15), Random.Range(-3, 10));
+        clone.transform.position = new Vector2(Random.Range(0,20), Random.Range(-3, 10));
 
      }
     IEnumerator PlatformWave()

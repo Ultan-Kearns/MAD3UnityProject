@@ -533,7 +533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d36b8614f2d0a344ab50719ae92c4fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 2489478016361091, guid: 70acb814e25f88143861d2e1925ad067, type: 3}
+  bullet: {fileID: 1828736696905106090, guid: a296c9d1eae904b46ab939e1959df9f6, type: 3}
 --- !u!82 &519420034
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1376,6 +1376,8 @@ MonoBehaviour:
   checkLayerPlatform:
     serializedVersion: 2
     m_Bits: 256
+  audio: {fileID: 0}
+  jumpSound: {fileID: 8300000, guid: 1f45df430b2c44d4ab8aa15ed0d29d4c, type: 3}
   playerJump: {fileID: 21300000, guid: 11f6ac2441bfcba45846adfe0752f5fe, type: 3}
   playerModel: {fileID: 21300000, guid: 51b00d90e7cb125478d9b9a87b29b7ac, type: 3}
 --- !u!61 &1903290102
@@ -1414,7 +1416,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1f45df430b2c44d4ab8aa15ed0d29d4c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

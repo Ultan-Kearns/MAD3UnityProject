@@ -18,8 +18,8 @@ public class Movement : MonoBehaviour
     public float platformRadius;
     public LayerMask checkLayerPlatform;
     //will hold audio for player
-    private AudioSource audio;
-    private AudioClip jumpSound;
+    public AudioSource audio;
+    public AudioClip jumpSound;
     GameObject player;
     public Sprite playerJump, playerModel;
     //change with difficulty - for lives default 2 lives
@@ -54,6 +54,10 @@ public class Movement : MonoBehaviour
             Debug.Log("Assume player is dead - EndGame");
             Dead();
         }
+        if(isGrounded == false)
+            player.gameObject.GetComponent<SpriteRenderer>().sprite = playerJump;
+        if(isGrounded == true)
+            player.gameObject.GetComponent<SpriteRenderer>().sprite = playerModel;
     }
 
     private void Dead()
@@ -74,11 +78,9 @@ public class Movement : MonoBehaviour
     //need to see if box collider is detecting collisions
     void PlayerJump()
     {
-
         var posY = jump;
         rb.velocity = new Vector2(rb.velocity.x, posY);
-        audio.Play(); 
-
+        audio.Play();
     }
     public static void decrementLives(int hit)
     {

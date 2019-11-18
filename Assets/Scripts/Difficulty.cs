@@ -24,7 +24,7 @@ public class Difficulty : MonoBehaviour
     {
         
     }
-    public void setDifficulty(string difficulty)
+    public static void setDifficulty(string difficulty)
     {
         switch (difficulty) { 
             case "0":
