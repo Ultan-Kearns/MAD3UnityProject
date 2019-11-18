@@ -21,7 +21,7 @@ public class Movement : MonoBehaviour
     public AudioSource audio;
     public AudioClip jumpSound;
     GameObject player;
-    public Sprite playerJump, playerModel;
+    public Sprite playerJumpRight, playerJumpLeft, playerModelRight,playerModelLeft;
     //change with difficulty - for lives default 2 lives
     public static int lives = 2;
     void Start()
@@ -54,10 +54,28 @@ public class Movement : MonoBehaviour
             Debug.Log("Assume player is dead - EndGame");
             Dead();
         }
-        if(isGrounded == false)
-            player.gameObject.GetComponent<SpriteRenderer>().sprite = playerJump;
-        if(isGrounded == true)
-            player.gameObject.GetComponent<SpriteRenderer>().sprite = playerModel;
+        if (isGrounded == false)
+        {
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                player.gameObject.GetComponent<SpriteRenderer>().sprite = playerJumpLeft;
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                player.gameObject.GetComponent<SpriteRenderer>().sprite = playerJumpRight;
+            }
+        }
+        if (isGrounded == true)
+        {
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                player.gameObject.GetComponent<SpriteRenderer>().sprite = playerModelLeft;
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                player.gameObject.GetComponent<SpriteRenderer>().sprite = playerModelRight;
+            }
+        }
     }
 
     private void Dead()

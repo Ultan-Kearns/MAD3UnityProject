@@ -1378,8 +1378,10 @@ MonoBehaviour:
     m_Bits: 256
   audio: {fileID: 0}
   jumpSound: {fileID: 8300000, guid: 1f45df430b2c44d4ab8aa15ed0d29d4c, type: 3}
-  playerJump: {fileID: 21300000, guid: 11f6ac2441bfcba45846adfe0752f5fe, type: 3}
-  playerModel: {fileID: 21300000, guid: 51b00d90e7cb125478d9b9a87b29b7ac, type: 3}
+  playerJumpRight: {fileID: 21300000, guid: 11f6ac2441bfcba45846adfe0752f5fe, type: 3}
+  playerJumpLeft: {fileID: 21300000, guid: 69826767c355a084fa84237d91844055, type: 3}
+  playerModelRight: {fileID: 21300000, guid: 51b00d90e7cb125478d9b9a87b29b7ac, type: 3}
+  playerModelLeft: {fileID: 21300000, guid: 5f997680b20a7394ebae1676eeb704a3, type: 3}
 --- !u!61 &1903290102
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1674,6 +1676,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507201924691534320, guid: 4828df480d32e0c4daaf48a62c6385ed,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4828df480d32e0c4daaf48a62c6385ed, type: 3}
