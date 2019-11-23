@@ -44,7 +44,7 @@ public class Movement : MonoBehaviour
         //takes in the platform positions the radius of the colldier and to see if player is on right layer
         //adapted from tutorial - https://www.youtube.com/watch?v=QGDeafTx5ug&t=477s
         isGrounded = Physics2D.OverlapCircle(isOnPlatform.position, platformRadius, checkLayerPlatform);
-        Debug.Log(isGrounded);
+ 
         if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
         {
             PlayerJump();
@@ -57,6 +57,7 @@ public class Movement : MonoBehaviour
         }
         if (isGrounded == false)
         {
+            //check if player moves in air and then change to sprites
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 player.gameObject.GetComponent<SpriteRenderer>().sprite = playerJumpLeft;
@@ -68,6 +69,7 @@ public class Movement : MonoBehaviour
         }
         if (isGrounded == true)
         {
+            //change model on ground
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 player.gameObject.GetComponent<SpriteRenderer>().sprite = playerModelLeft;
@@ -86,6 +88,7 @@ public class Movement : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
+    //allows player to move left + right
     private void PlayerMove()
     {
         //have an input from user
@@ -94,13 +97,14 @@ public class Movement : MonoBehaviour
         var newXPos = deltaX * speed;
         rb.velocity = new Vector2(newXPos, rb.velocity.y);
     }
-    //need to see if box collider is detecting collisions
+    //Allows player to jump and plays funny noise - haha oh wow
     void PlayerJump()
     {
         var posY = jump;
         rb.velocity = new Vector2(rb.velocity.x, posY);
         audio.Play();
     }
+   //decrement lives on hit
     public static void decrementLives(int hit)
     {
         lives -= hit;

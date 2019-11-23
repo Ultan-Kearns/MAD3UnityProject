@@ -7,10 +7,6 @@ public class BulletMovement : MonoBehaviour
 {
     Rigidbody2D rb;
     float speed = 10f;
-    int score = 0;
-    //if bullet count gets greater than certain amount then increment wave
-    int wave = 1;
-    int bulletCount = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,25 +17,33 @@ public class BulletMovement : MonoBehaviour
     void Update()
     {
         rb.velocity = Vector2.left * speed;
- 
-        //Free up memory after the platform gets out of bounds
-        if (gameObject.transform.position.x <= -14)
+
+        //Free up memory after the bullet gets out of bounds
+
+        if (gameObject.transform.position.x <= -11)
         {
             Destroy(gameObject);
-            score += 10;
-            bulletCount++;
+            //times score by wave
+            Score.scoreNum += 10 * Wave.getWave();
+            Wave.bulletCount++;
             //update the wave and add speed to bullets
-            if (bulletCount > 20 && wave < 10){
-                wave++;
-                speed += 1;
+            if (Wave.bulletCount > 10 * Wave.getWave() && Wave.getWave() < 10)
+            {
+                Score.scoreMultiplier = Wave.getWave();
+                //reset the bullet count
+                Wave.bulletCount = 0;
+                Wave.setWave(Wave.getWave() + 1);
+                speed += 5;
+                PlatformMovement.setSpeed(PlatformMovement.getSpeed() + 2);
             }
         }
-     
+
     }
- //need to allow bullets to pass through player
+    //need to allow bullets to pass through player
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("hit");
+        Score.scoreNum -= 10 * Score.scoreMultiplier;
         Movement.decrementLives(1);
         Destroy(gameObject);
         //May insert audio here to notify user that they have been hit
