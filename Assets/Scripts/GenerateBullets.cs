@@ -6,6 +6,7 @@ public class GenerateBullets : MonoBehaviour
 {
     public GameObject bullet;
     float delay = 2f;
+
     public void Start()
     {
         //start coroutine
@@ -17,7 +18,7 @@ public class GenerateBullets : MonoBehaviour
         //instantiate the bullet
         GameObject clone = Instantiate(bullet);
         //set the position of new bullet
-        clone.transform.position = new Vector2(Random.Range(11,20), Random.Range(0, 11));
+        clone.transform.position = new Vector2(Random.Range(40,60), Random.Range(0, 11));
     }
     IEnumerator bulletWave()
     {

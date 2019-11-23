@@ -8,6 +8,9 @@ public class BulletMovement : MonoBehaviour
     Rigidbody2D rb;
     float speed = 10f;
     int score = 0;
+    //if bullet count gets greater than certain amount then increment wave
+    int wave = 1;
+    int bulletCount = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +27,12 @@ public class BulletMovement : MonoBehaviour
         {
             Destroy(gameObject);
             score += 10;
-
+            bulletCount++;
+            //update the wave and add speed to bullets
+            if (bulletCount > 20 && wave < 10){
+                wave++;
+                speed += 1;
+            }
         }
      
     }

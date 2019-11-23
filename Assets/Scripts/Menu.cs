@@ -6,7 +6,9 @@ public class Menu : MonoBehaviour
 {
     public void Play()
     {
-        SceneManager.LoadScene(1); 
+        SceneManager.LoadScene(1);
+        //reset difficulty to medium on restart
+        Difficulty.setDifficulty("1");
     }
     public void Quit()
     {

@@ -42,6 +42,7 @@ public class Movement : MonoBehaviour
 
         //use a circle collider on bottom of player to check if the player is on a platform
         //takes in the platform positions the radius of the colldier and to see if player is on right layer
+        //adapted from tutorial - https://www.youtube.com/watch?v=QGDeafTx5ug&t=477s
         isGrounded = Physics2D.OverlapCircle(isOnPlatform.position, platformRadius, checkLayerPlatform);
         Debug.Log(isGrounded);
         if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
