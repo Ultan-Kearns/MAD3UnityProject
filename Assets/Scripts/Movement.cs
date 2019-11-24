@@ -83,7 +83,10 @@ public class Movement : MonoBehaviour
 
     private void Dead()
     {
-     
+        //reset all
+        Wave.setWave(1);
+        Score.scoreNum = 0;
+        PlatformMovement.setSpeed(2);
         //also change to gameover screen
         SceneManager.LoadScene(2);
     }

@@ -34,7 +34,7 @@ public class BulletMovement : MonoBehaviour
                 Wave.bulletCount = 0;
                 Wave.setWave(Wave.getWave() + 1);
                 speed += 5;
-                PlatformMovement.setSpeed(PlatformMovement.getSpeed() + 2);
+                PlatformMovement.setSpeed(PlatformMovement.getSpeed() + 1.3f);
             }
         }
 
