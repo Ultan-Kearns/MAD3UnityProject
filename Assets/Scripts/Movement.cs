@@ -22,8 +22,8 @@ public class Movement : MonoBehaviour
     public AudioClip jumpSound;
     GameObject player;
     public Sprite playerJumpRight, playerJumpLeft, playerModelRight,playerModelLeft;
-    //change with difficulty - for lives default 2 lives
-    public static int lives = 2;
+    //change with difficulty 
+    public static int lives;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -32,12 +32,14 @@ public class Movement : MonoBehaviour
         //set the clip to be this initially
         audio.clip = jumpSound;
         player = GameObject.Find("Player");
+        //get difficulty
+        Difficulty.setDifficulty(Difficulty.getDifficulty());
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log(int.Parse(Difficulty.getDifficulty()).ToString());
         PlayerMove();
 
         //use a circle collider on bottom of player to check if the player is on a platform
@@ -83,12 +85,10 @@ public class Movement : MonoBehaviour
 
     private void Dead()
     {
-        //reset all
-        Wave.setWave(1);
-        Score.scoreNum = 0;
-        PlatformMovement.setSpeed(2);
+    
         //also change to gameover screen
         SceneManager.LoadScene(2);
+        Wave.reset();
     }
 
     //allows player to move left + right

@@ -35,6 +35,7 @@ public class BulletMovement : MonoBehaviour
                 Wave.setWave(Wave.getWave() + 1);
                 speed += 5;
                 PlatformMovement.setSpeed(PlatformMovement.getSpeed() + 1.3f);
+              
             }
         }
 
@@ -51,6 +52,8 @@ public class BulletMovement : MonoBehaviour
         if (Movement.getLives() < 0)
         {
             SceneManager.LoadScene(2);
+            //reset all
+            Wave.reset();
         }
     }
 }

@@ -465,13 +465,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platform: {fileID: 1507201924691534315, guid: 4828df480d32e0c4daaf48a62c6385ed,
     type: 3}
-  platform1: {fileID: -7181713554781517792, guid: d5562bdc6c206e9489a9e7ef764e4084,
+  mainCamera: {fileID: 519420031}
+  platform1: {fileID: 2819453876182325756, guid: d5562bdc6c206e9489a9e7ef764e4084,
     type: 3}
-  platform2: {fileID: 5507297715504172608, guid: d5562bdc6c206e9489a9e7ef764e4084,
+  platform2: {fileID: -7181713554781517792, guid: d5562bdc6c206e9489a9e7ef764e4084,
     type: 3}
   platform3: {fileID: 5507297715504172608, guid: d5562bdc6c206e9489a9e7ef764e4084,
     type: 3}
-  platform4: {fileID: 0}
+  platform4: {fileID: 1844941693715383748, guid: d5562bdc6c206e9489a9e7ef764e4084,
+    type: 3}
+  medium: {fileID: 8300000, guid: c428ce137c2bfb34a882a58e74021644, type: 3}
+  hard: {fileID: 8300000, guid: 7eba4599ebedcdb47a6d9b8a4b3ec69c, type: 3}
+  harder: {fileID: 8300000, guid: 7eba4599ebedcdb47a6d9b8a4b3ec69c, type: 3}
+  hardest: {fileID: 8300000, guid: ac94eeabaa4a04b4ea7ffdcbe9b6ca1d, type: 3}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -556,7 +562,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
