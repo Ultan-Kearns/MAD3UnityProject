@@ -4,20 +4,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
+    public void Start()
+    {
+        Debug.Log("Start");
+       
+    }
     public void Play()
     {
+    
         SceneManager.LoadScene(1);
-        //reset difficulty to medium on restart
-        Difficulty.setDifficulty("1");
     }
     public void Quit()
     {
+        Debug.Log("Start");
         Debug.Log("this should quit game");
         //if in game over screen
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
-            //reset difficulty to medium on restart
-            Difficulty.setDifficulty("1");
             SceneManager.LoadScene(0);
         }
         else

@@ -4,41 +4,38 @@ using UnityEngine;
 
 public class Boundaries : MonoBehaviour
 {
-    // get the main camera
-    // get the bounds of it (X,Y) - half the size
-    // use Mathf.Clamp to compare the min, max to the current x
- 
+    //CODE ADAPTED FROM MOBILE APPLICATION DEVELOPMENT LABS
 
-     private Vector2 boundary;
-    private float playerWidth;
- 
+    // need to keep the player within the main camera
+    //== fields ==
+    public Camera mainCamera;
+
+    private Vector2 screenBounds;
+
+    private float objectWidth =1, objectHeight = 1;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        // Setup boundary to ensure player does not go beyond screen width
-        boundary = Camera.main.ScreenToWorldPoint(
-                                new Vector3(Screen.width,
-                                            Screen.height,
-                                            Camera.main.transform.position.z));
-         playerWidth = gameObject.GetComponent<SpriteRenderer>().bounds.extents.x;
-        Debug.Log(boundary);
-         }
+        // find the screen bounds and convert to unity 
+        screenBounds = mainCamera.ScreenToWorldPoint(
+                            new Vector3(Screen.width,
+                                        Screen.height,
+                                        mainCamera.transform.position.z));
+    }
 
-    //need to check player is in bounds after player moves
     private void LateUpdate()
     {
-        Vector3 viewPosition = transform.position;
-        // find the position of X and clamp
-        viewPosition.x = Mathf.Clamp(viewPosition.x,
-                                Screen.width,
-                                Screen.width * -1);
-        viewPosition.x = Mathf.Clamp(viewPosition.y,
-                        Screen.height,
-                        Screen.height * -1);
-  
-        //set transform to view position to ensure player doesn't go past boundary
-        transform.position = viewPosition;
+        Vector3 viewPos = transform.position;
+
+        viewPos.x = Mathf.Clamp(viewPos.x,
+                                screenBounds.x * -1 + objectWidth,
+                                screenBounds.x - objectWidth);
+        viewPos.y = Mathf.Clamp(viewPos.y,
+                                screenBounds.y * -1 + objectHeight,
+                                screenBounds.y - objectHeight);
+        transform.position = viewPos;
     }
+
 }
-
-

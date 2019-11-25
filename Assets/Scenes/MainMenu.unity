@@ -2953,7 +2953,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dd: {fileID: 1743124592}
-  ddText: 
 --- !u!1 &1899551218
 GameObject:
   m_ObjectHideFlags: 0

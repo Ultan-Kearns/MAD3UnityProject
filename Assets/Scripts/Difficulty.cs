@@ -26,6 +26,13 @@ public class Difficulty : MonoBehaviour
     }
     public static void setDifficulty(string difficulty)
     {
+        //check if difficulty nnon existant
+        if (ddText == null)
+        {
+            Debug.Log("TESTING DIFF");
+            ddText = "2";
+            setDifficulty(ddText);
+        }
         switch (difficulty) { 
             case "0":
                 Movement.lives = 3;
