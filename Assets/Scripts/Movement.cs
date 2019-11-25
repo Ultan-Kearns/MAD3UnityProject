@@ -34,14 +34,14 @@ public class Movement : MonoBehaviour
         player = GameObject.Find("Player");
         //get difficulty
         Difficulty.setDifficulty(Difficulty.getDifficulty());
+        //test
+        Wave.setWave(2);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(int.Parse(Difficulty.getDifficulty()).ToString());
         PlayerMove();
-
         //use a circle collider on bottom of player to check if the player is on a platform
         //takes in the platform positions the radius of the colldier and to see if player is on right layer
         //adapted from tutorial - https://www.youtube.com/watch?v=QGDeafTx5ug&t=477s

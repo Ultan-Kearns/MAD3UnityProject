@@ -6,7 +6,7 @@ public class Wave : MonoBehaviour
     static int wave = 1;
     public Text waveText;
     public static int bulletCount = 0;
-
+    static AudioManager am = new AudioManager();
     // Update is called once per frame
     void Update()
     {
@@ -15,6 +15,7 @@ public class Wave : MonoBehaviour
     public static void setWave(int newWave)
     {
         wave = newWave;
+        am.setAudio();
     }
     public static int getWave()
     {
@@ -27,6 +28,5 @@ public class Wave : MonoBehaviour
         bulletCount = 0;
         Score.scoreNum = 0;
         PlatformMovement.setSpeed(2);
-        
     }
 }

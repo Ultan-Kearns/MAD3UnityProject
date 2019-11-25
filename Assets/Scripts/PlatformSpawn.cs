@@ -8,7 +8,6 @@ public class PlatformSpawn : MonoBehaviour
     public Camera mainCamera;
     private float delay = 3.5f;
     public Sprite  platform1, platform2,platform3,platform4;
-    public AudioClip medium, hard, harder, hardest;
     public void Start()
     {
         //start coroutine
@@ -22,26 +21,18 @@ public class PlatformSpawn : MonoBehaviour
         if (Wave.getWave() >= 2 && Wave.getWave() < 4)
         {
             clone.gameObject.GetComponent<SpriteRenderer>().sprite = platform1;
-            mainCamera.GetComponent<AudioSource>().clip = hard;
-            mainCamera.GetComponent<AudioSource>().Play();
         }
         else if(Wave.getWave() >= 4 && Wave.getWave() < 6)
         {
             clone.gameObject.GetComponent<SpriteRenderer>().sprite = platform2;
-            mainCamera.GetComponent<AudioSource>().clip = hard;
-            mainCamera.GetComponent<AudioSource>().Play();
         }
         else if (Wave.getWave() >= 6 && Wave.getWave() < 8)
         {
             clone.gameObject.GetComponent<SpriteRenderer>().sprite = platform3;
-            mainCamera.GetComponent<AudioSource>().clip = harder;
-            mainCamera.GetComponent<AudioSource>().Play();
         }
         else if(Wave.getWave() > 8)
         {
             clone.gameObject.GetComponent<SpriteRenderer>().sprite = platform4;
-            mainCamera.GetComponent<AudioSource>().clip = hardest;
-            mainCamera.GetComponent<AudioSource>().Play();
         }
         
         //instantiate the platform
