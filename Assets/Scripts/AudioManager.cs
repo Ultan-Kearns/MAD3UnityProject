@@ -38,7 +38,7 @@ public class AudioManager : MonoBehaviour
             Camera.main.GetComponent<AudioSource>().clip = harder;
             Camera.main.GetComponent<AudioSource>().Play();
         }
-        else if (Wave.getWave() >= 8)
+        else
         {
             hardest = Resources.Load<AudioClip>("Audio/Hardest");
             Camera.main.GetComponent<AudioSource>().clip = hardest;

@@ -26,11 +26,11 @@ public class Difficulty : MonoBehaviour
     }
     public static void setDifficulty(string difficulty)
     {
-        //check if difficulty nnon existant
+        //Make easy initial value
         if (ddText == null)
         {
-            Debug.Log("TESTING DIFF");
-            ddText = "2";
+            Debug.Log("TESTING DIFF " + ddText);
+            ddText = "0";
             setDifficulty(ddText);
         }
         switch (difficulty) { 

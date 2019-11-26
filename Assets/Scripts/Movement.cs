@@ -34,8 +34,9 @@ public class Movement : MonoBehaviour
         player = GameObject.Find("Player");
         //get difficulty
         Difficulty.setDifficulty(Difficulty.getDifficulty());
+        Debug.Log("DIFFICULTY " + Difficulty.getDifficulty());
         //test
-        Wave.setWave(1);
+        Wave.setWave(8);
     }
 
     // Update is called once per frame
