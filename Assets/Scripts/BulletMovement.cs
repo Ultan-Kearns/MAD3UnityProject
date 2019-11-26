@@ -20,7 +20,7 @@ public class BulletMovement : MonoBehaviour
 
         //Free up memory after the bullet gets out of bounds
 
-        if (gameObject.transform.position.x <= -11)
+        if (gameObject.transform.position.x <= -14)
         {
             Destroy(gameObject);
             //times score by wave
@@ -29,12 +29,7 @@ public class BulletMovement : MonoBehaviour
             //update the wave and add speed to bullets
             if (Wave.bulletCount > 10 * Wave.getWave() && Wave.getWave() < 10)
             {
-                Score.scoreMultiplier = Wave.getWave();
-                //reset the bullet count
-                Wave.bulletCount = 0;
-                Wave.setWave(Wave.getWave() + 1);
-                speed += 5;
-                PlatformMovement.setSpeed(PlatformMovement.getSpeed() + 1.3f);
+                newRound();
             }
         }
 
@@ -54,5 +49,14 @@ public class BulletMovement : MonoBehaviour
             //reset all
             Wave.reset();
         }
+    }
+    private void newRound()
+    {
+        Score.scoreMultiplier = Wave.getWave();
+        //reset the bullet count
+        Wave.bulletCount = 0;
+        Wave.setWave(Wave.getWave() + 1);
+        speed += 5;
+        PlatformMovement.setSpeed(PlatformMovement.getSpeed() + 1.3f);
     }
 }

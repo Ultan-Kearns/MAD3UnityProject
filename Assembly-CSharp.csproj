@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\GenerateBullets.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
+    <Compile Include="Assets\Scripts\Mute.cs" />
     <Compile Include="Assets\Scripts\PlatformMovement.cs" />
     <Compile Include="Assets\Scripts\PlatformSpawn.cs" />
     <Compile Include="Assets\Scripts\Score.cs" />

@@ -5,15 +5,13 @@ using UnityEngine;
 public class Boundaries : MonoBehaviour
 {
     //CODE ADAPTED FROM MOBILE APPLICATION DEVELOPMENT LABS
-
-    // need to keep the player within the main camera
-    //== fields ==
+     
     public Camera mainCamera;
 
     private Vector2 screenBounds;
 
     private float objectWidth =1, objectHeight = 1;
-
+    private float screenwidth = -13, screenheight = -20;
 
     // Start is called before the first frame update
     void Start()
@@ -28,12 +26,13 @@ public class Boundaries : MonoBehaviour
     private void LateUpdate()
     {
         Vector3 viewPos = transform.position;
-
+        Debug.Log("SCREEN " + screenBounds.x);
         viewPos.x = Mathf.Clamp(viewPos.x,
-                                screenBounds.x * -1 + objectWidth,
+                                screenwidth + objectWidth,
                                 screenBounds.x - objectWidth);
+        //needed to change y so that player can be considered 
         viewPos.y = Mathf.Clamp(viewPos.y,
-                                screenBounds.y * -1 + objectHeight,
+                                screenheight,
                                 screenBounds.y - objectHeight);
         transform.position = viewPos;
     }

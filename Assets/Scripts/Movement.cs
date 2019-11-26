@@ -35,8 +35,7 @@ public class Movement : MonoBehaviour
         //get difficulty
         Difficulty.setDifficulty(Difficulty.getDifficulty());
         Debug.Log("DIFFICULTY " + Difficulty.getDifficulty());
-        //test
-        Wave.setWave(8);
+      
     }
 
     // Update is called once per frame
