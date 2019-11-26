@@ -5,7 +5,7 @@
 \usepackage{listings}
 \usepackage{hyperref}
 \usepackage{amsmath}
-\title{Developer Diary}
+\title{Quickfire The Game - Developer Diary}
 \author{Ultan Kearns}
 \date{\today}
 \begin{document}
@@ -45,7 +45,7 @@ Before I started coding I read the design document extensively and made a note o
 I brainstormed some ideas with the designer before I began implementing them into the game.  I suggested that the background and music could change when the player reached a certain wave so that the player was informed of the increasing difficulty.  I found the designer was very receptive to my ideas and welcomed them into the game. I also started brainstorming what functionality I could add to the game and which way I could implement the designer's functionality in a way that felt fluid and intuitive to the player.  An example of my brainstorming is where I decided that the player should only have a single jump as opposed to a double or triple jump to add difficulty to the game, I also added an overlap circle to detect if the player is on a platform and stipulated that they can only jump when on a platform.  I found that brainstorming ideas really helped me to implement and improve the games functionality. 
 \section{Beginning the project}
 I started this project off with brainstorming ideas of how to implement the various features that the designer had specified in the design document. I thought of how best to implement them so that the movement and game-play would seem fluid and the controls intuitive. I also brainstormed what type of features could be improved upon and discussed these with the designer. I read the design document a few times to get the general feel for the game and to ensure I understood all the requirements for the game.  I began by making a simple prototype and slowly improving upon it gradually.  I discussed any changes I wished to make with the designer and ensured that they agreed with the changes before I began implementing them into the game.
-\chapter{Implementation}s
+\chapter{Implementation}
 \section{Beginning implementation}
 \subsection{Starting to code}
 When I started to code the project I had many issues such as boxcolliders not working and various other problems luckily these weren't  hard to solve as the unity documentation site here:\href{https://docs.unity3d.com/Manual/index.html}{Link to Unity documentation} is fairly extensive.  I was able to solve a vast majority of these problems by analyzing code from the labs and was able to find solutions to my specific problems within the game I'm developing.  I found myself running into many problems with Unity but through determination and using their documentation as well as some Youtube tutorials I found myself becoming more and more comfortable with using Unity and I actually found that I enjoyed making these games.
@@ -75,6 +75,8 @@ Music is a very important aspect in many games as it can convey the mood to the 
 For the game over screen I used Funeral Marche by Chopin\cite{Chopin} to signify the loss of the player and for the main menu I chose Spring by Vivaldi\cite{Vivaldi2} as it sounds nice and draws the user into the game.
 \section{Menus}
 The menus are fairly basic and offer all the functionality that the designer outlined in the specification.  All the options are fairly straight forward as to not confuse the player before they have even started the game.  I wanted to also make the menus as intuitive as possible so that the player did not have to spend ages figuring out which options were under which section.
+\section{Game}
+Designing the games setting was by far the most challenging aspect of developing the game.  I had to first of all implement a number of features then test if the game was engaging enough to keep a players attention. I started by making a basic version of the game with no score or waves, just a cube to represent the player and circles to represent bullets. Once I had the base game working I then decided to add in the sprites to make the game look good, after adding the sprites I then started to implement waves and scores while working on the platforms speed and bullets speed to test it while I worked on the game. In the end I wound up with a pretty good looking retro game which is engaging and, if I may say so myself, quite fun.
 \chapter{Testing}
 \section{Beginning Testing}
 I first started by reviewing the test plan and seeing which functionality I needed to implement. I then decided to implement the requirements as specified in the design document, once I finished the basic design of the game then I got into testing the functionality developed.
