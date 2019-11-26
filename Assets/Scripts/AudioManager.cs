@@ -9,35 +9,40 @@ public class AudioManager : MonoBehaviour
     public AudioSource audioSource;
     private void Start()
     {
-        medium = Resources.Load<AudioClip>("Audio/Easy");
-        hard = Resources.Load<AudioClip>("Audio/Hard");
-        harder = Resources.Load<AudioClip>("Audio/Harder");
-        hardest = Resources.Load<AudioClip>("Audio/Hardest");  
+
 
     }
     public void setAudio()
     {
+        //reload data
         //set audio and audiosource
-         if (Wave.getWave() >= 2 && Wave.getWave() < 4)
+        if (Wave.getWave() >= 2 && Wave.getWave() < 4)
         {
+            medium = Resources.Load<AudioClip>("Audio/Medium");
+
             //returning sound file but not changing
             Camera.main.GetComponent<AudioSource>().clip = medium;
-             Camera.main.GetComponent<AudioSource>().Play();
+            Camera.main.GetComponent<AudioSource>().Play();
         }
         else if (Wave.getWave() >= 4 && Wave.getWave() < 6)
         {
-            audioSource.clip = hard;
-            audioSource.Play();
+            hard = Resources.Load<AudioClip>("Audio/Hard");
+
+            Camera.main.GetComponent<AudioSource>().clip = hard;
+            Camera.main.GetComponent<AudioSource>().Play();
         }
         else if (Wave.getWave() >= 6 && Wave.getWave() < 8)
         {
-            audioSource.clip = harder;
-            audioSource.Play();
+            harder = Resources.Load<AudioClip>("Audio/Harder");
+
+            Camera.main.GetComponent<AudioSource>().clip = harder;
+            Camera.main.GetComponent<AudioSource>().Play();
         }
-        else if (Wave.getWave() > 8)
+        else if (Wave.getWave() >= 8)
         {
-            audioSource.clip = hardest;
-            audioSource.Play();
+            hardest = Resources.Load<AudioClip>("Audio/Hardest");
+            Camera.main.GetComponent<AudioSource>().clip = hardest;
+            Camera.main.GetComponent<AudioSource>().Play();
         }
     }
 }
