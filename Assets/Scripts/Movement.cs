@@ -35,8 +35,8 @@ public class Movement : MonoBehaviour
         //get difficulty
         Difficulty.setDifficulty(Difficulty.getDifficulty());
         Debug.Log("DIFFICULTY " + Difficulty.getDifficulty());
-      
-    }
+        Wave.setWave(1);
+     }
 
     // Update is called once per frame
     void Update()
@@ -88,7 +88,6 @@ public class Movement : MonoBehaviour
     
         //also change to gameover screen
         SceneManager.LoadScene(2);
-        Wave.reset();
     }
 
     //allows player to move left + right

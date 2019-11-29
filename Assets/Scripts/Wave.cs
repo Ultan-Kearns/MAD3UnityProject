@@ -15,8 +15,8 @@ public class Wave : MonoBehaviour
     public static void setWave(int newWave)
     {
         wave = newWave;
-        //so song will not change unless game calls for it
-        if(getWave() == 2 || wave == 4 || wave == 6 || wave == 8)
+        //so song will not change unless game calls for it round 1 added for mute
+        if(getWave() == 1||getWave() == 2 || wave == 4 || wave == 6 || wave == 8)
             am.setAudio();
     }
     public static int getWave()
