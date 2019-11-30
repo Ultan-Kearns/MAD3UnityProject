@@ -5,7 +5,7 @@ using UnityEngine;
 public class GenerateBullets : MonoBehaviour
 {
     public GameObject bullet;
-    float delay = 2f;
+    static float delay = 2f;
 
     public void Start()
     {
@@ -19,6 +19,14 @@ public class GenerateBullets : MonoBehaviour
         GameObject clone = Instantiate(bullet);
         //set the position of new bullet
         clone.transform.position = new Vector2(Random.Range(40,60), Random.Range(0, 11));
+    }
+    public static void setDelay(float newDelay)
+    {
+        delay = newDelay;
+    }
+    public static float getDelay()
+    {
+        return delay;
     }
     IEnumerator bulletWave()
     {

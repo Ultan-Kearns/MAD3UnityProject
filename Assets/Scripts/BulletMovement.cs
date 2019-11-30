@@ -46,8 +46,6 @@ public class BulletMovement : MonoBehaviour
         if (Movement.getLives() < 0)
         {
             SceneManager.LoadScene(2);
-            //reset all
-            Wave.reset();
         }
     }
     private void newRound()
@@ -58,5 +56,8 @@ public class BulletMovement : MonoBehaviour
         Wave.setWave(Wave.getWave() + 1);
         speed += 5;
         PlatformMovement.setSpeed(PlatformMovement.getSpeed() + 1.3f);
+        //reduce delay upon wave - need test
+        PlatformSpawn.setDelay(PlatformSpawn.getDelay() - 0.3f);
+        GenerateBullets.setDelay(GenerateBullets.getDelay() - 0.2f);
     }
 }

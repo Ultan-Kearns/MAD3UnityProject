@@ -6,7 +6,7 @@ public class PlatformSpawn : MonoBehaviour
 {
     public GameObject platform;
     public Camera mainCamera;
-    private float delay = 3.5f;
+    private static float delay = 2.5f;
     public Sprite platform1, platform2, platform3, platform4;
     public void Start()
     {
@@ -39,8 +39,16 @@ public class PlatformSpawn : MonoBehaviour
         //instantiate the platform
         clone = Instantiate(platform);
         //set the position of new platform
-        clone.transform.position = new Vector2(Random.Range(20, 30), Random.Range(-3, 10));
+        clone.transform.position = new Vector2(Random.Range(50, 60), Random.Range(-3, 10));
 
+    }
+    public static void setDelay(float newDelay)
+    {
+        delay = newDelay;
+    }
+    public static float getDelay()
+    {
+        return delay;
     }
     IEnumerator PlatformWave()
     {

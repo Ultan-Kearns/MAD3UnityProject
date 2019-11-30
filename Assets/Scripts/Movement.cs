@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class Movement : MonoBehaviour
 {
     //variable for player speed
-    public float speed = 3f;
+    public float speed = 10f;
     public float jump = 5f;
     // Start is called before the first frame update
     Rigidbody2D rb;
@@ -80,15 +80,6 @@ public class Movement : MonoBehaviour
                 player.gameObject.GetComponent<SpriteRenderer>().sprite = playerModelRight;
             }
         }
-        //Check if player is on platform if he is move with platform and if he wants to move then call move
-        if (isGrounded == true && Input.GetKeyDown(KeyCode.LeftArrow) == false && Input.GetKeyDown(KeyCode.RightArrow) == false)
-        {
-            //have an input from user
-            var deltaX = Input.GetAxis("Horizontal");
-            //Add the position where player is going to be and give them speed
-            var newXPos = deltaX * speed;
-            rb.velocity = new Vector2(newXPos + PlatformMovement.getSpeed() * -1, rb.velocity.y);
-        }
     }
 
     private void Dead()
@@ -105,7 +96,15 @@ public class Movement : MonoBehaviour
         var deltaX = Input.GetAxis("Horizontal");
         //Add the position where player is going to be and give them speed
         var newXPos = deltaX * speed;
-        rb.velocity = new Vector2(newXPos, rb.velocity.y);
+        //Check if player is on platform if he is move with platform and if he wants to move then call move
+        if (isGrounded == true)
+        {
+            rb.velocity = new Vector2(newXPos + PlatformMovement.getSpeed() * -1, rb.velocity.y);
+        }
+        else
+        {
+            rb.velocity = new Vector2(newXPos, rb.velocity.y);
+        }
     }
     //Allows player to jump and plays funny noise - haha oh wow
     void PlayerJump()

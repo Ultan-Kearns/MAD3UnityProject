@@ -20,6 +20,8 @@ public class Menu : MonoBehaviour
     public void Play()
     {
         SceneManager.LoadScene(1);
+        //reset all
+        Wave.reset();
     }
  
     public void Quit()
@@ -30,6 +32,8 @@ public class Menu : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
             SceneManager.LoadScene(0);
+            //reset all
+            Wave.reset();
         }
         else
         {
