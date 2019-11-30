@@ -30,5 +30,6 @@ public class Wave : MonoBehaviour
         bulletCount = 0;
         Score.scoreNum = 0;
         PlatformMovement.setSpeed(2);
+        BulletMovement.speed = 10;
     }
 }

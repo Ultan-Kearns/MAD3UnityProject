@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class BulletMovement : MonoBehaviour
 {
     Rigidbody2D rb;
-    float speed = 10f;
+    public static float speed = 10f;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +38,7 @@ public class BulletMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("hit");
-        Score.scoreNum -= 10 * Score.scoreMultiplier;
+        Score.scoreNum -= 10 * Wave.getWave();
         Movement.decrementLives(1);
         Destroy(gameObject);
         //May insert audio here to notify user that they have been hit
@@ -48,6 +48,7 @@ public class BulletMovement : MonoBehaviour
             SceneManager.LoadScene(2);
         }
     }
+
     private void newRound()
     {
         Score.scoreMultiplier = Wave.getWave();
@@ -56,7 +57,6 @@ public class BulletMovement : MonoBehaviour
         Wave.setWave(Wave.getWave() + 1);
         speed += 5;
         PlatformMovement.setSpeed(PlatformMovement.getSpeed() + 1.3f);
-        //reduce delay upon wave - need test
         PlatformSpawn.setDelay(PlatformSpawn.getDelay() - 0.3f);
         GenerateBullets.setDelay(GenerateBullets.getDelay() - 0.2f);
     }

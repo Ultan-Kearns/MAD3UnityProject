@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlatformMovement : MonoBehaviour
 {
     //change this as it game gets more difficult
-    private static float speed = 2;
+    private static float speed = 3;
     private Rigidbody2D rb;  
 
     void Start()

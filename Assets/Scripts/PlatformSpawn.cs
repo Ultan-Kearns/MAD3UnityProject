@@ -39,7 +39,7 @@ public class PlatformSpawn : MonoBehaviour
         //instantiate the platform
         clone = Instantiate(platform);
         //set the position of new platform
-        clone.transform.position = new Vector2(Random.Range(50, 60), Random.Range(-3, 10));
+        clone.transform.position = new Vector2(Random.Range(45, 60), Random.Range(-3, 10));
 
     }
     public static void setDelay(float newDelay)

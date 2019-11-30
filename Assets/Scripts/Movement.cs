@@ -35,7 +35,6 @@ public class Movement : MonoBehaviour
         //get difficulty
         Difficulty.setDifficulty(Difficulty.getDifficulty());
         Debug.Log("DIFFICULTY " + Difficulty.getDifficulty());
-        Wave.setWave(1);
      }
 
     // Update is called once per frame
@@ -84,7 +83,19 @@ public class Movement : MonoBehaviour
 
     private void Dead()
     {
-    
+        //check if highscore
+        Int32.TryParse(PlayerPrefs.GetString("highscore"), out int highscore);
+        Debug.Log("HIGH " + highscore);
+        if (highscore == 0 && Score.scoreNum > 0)
+        {
+            GameOver.isHighScore = true;
+            PlayerPrefs.SetString("highscore", Score.scoreNum.ToString());
+        }
+        else if (Score.scoreNum > highscore)
+        {
+            GameOver.isHighScore = true;
+            PlayerPrefs.SetString("highscore", Score.scoreNum.ToString());
+        }
         //also change to gameover screen
         SceneManager.LoadScene(2);
     }
