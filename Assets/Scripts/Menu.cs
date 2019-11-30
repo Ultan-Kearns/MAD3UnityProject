@@ -17,6 +17,7 @@ public class Menu : MonoBehaviour
             Camera.main.GetComponent<AudioSource>().Pause();
             toggle.GetComponent<Toggle>().isOn = true;
         }
+ 
     }
     public void Play()
     {

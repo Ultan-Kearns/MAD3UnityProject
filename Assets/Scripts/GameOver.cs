@@ -23,7 +23,6 @@ public class GameOver : MonoBehaviour
              gameOverText.text += "\nYOU GOT THE HIGHSCORE: " + highscore;
 
         }
-        Wave.reset();
     }
  
 }

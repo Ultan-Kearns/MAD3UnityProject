@@ -35,6 +35,8 @@ public class Movement : MonoBehaviour
         //get difficulty
         Difficulty.setDifficulty(Difficulty.getDifficulty());
         Debug.Log("DIFFICULTY " + Difficulty.getDifficulty());
+        //calling here for mute
+        Wave.setWave(1);
      }
 
     // Update is called once per frame

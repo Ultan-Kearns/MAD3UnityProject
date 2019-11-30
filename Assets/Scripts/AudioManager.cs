@@ -17,14 +17,14 @@ public class AudioManager : MonoBehaviour
     public void setAudio()
     {
         checkToggle = PlayerPrefs.GetString("toggle");
-        Debug.Log(checkToggle);
+        Debug.Log("CHECK TOGGLE " + checkToggle);
         if (checkToggle == "True")
         {
             Camera.main.GetComponent<AudioSource>().Pause();
         }
-        else
+        else if(checkToggle == "False")
         {
-            //reload data
+            Debug.Log("CHECK TOGGLE IN SHITTY FUNC " + checkToggle);            //reload data
             //set audio and audiosource
             if (Wave.getWave() == 1)
                 return;

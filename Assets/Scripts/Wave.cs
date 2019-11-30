@@ -31,5 +31,6 @@ public class Wave : MonoBehaviour
         Score.scoreNum = 0;
         PlatformMovement.setSpeed(2);
         BulletMovement.speed = 10;
+        Score.scoreMultiplier = getWave();
     }
 }
