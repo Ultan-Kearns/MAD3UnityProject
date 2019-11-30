@@ -523,9 +523,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.5076, y: 4.25, z: -500}
-  m_LocalScale: {x: 1.5076, y: 1.5076, z: -100}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.5076, y: 4.25, z: -200}
+  m_LocalScale: {x: 0, y: 0, z: -100}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -1525,7 +1525,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1f45df430b2c44d4ab8aa15ed0d29d4c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.015
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1806,5 +1806,50 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2819453876182325756, guid: d5562bdc6c206e9489a9e7ef764e4084,
         type: 3}
+    - target: {fileID: 1507201924691534319, guid: 4828df480d32e0c4daaf48a62c6385ed,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507201924691534319, guid: 4828df480d32e0c4daaf48a62c6385ed,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507201924691534319, guid: 4828df480d32e0c4daaf48a62c6385ed,
+        type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507201924691534319, guid: 4828df480d32e0c4daaf48a62c6385ed,
+        type: 3}
+      propertyPath: m_UseAutoMass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507201924691534319, guid: 4828df480d32e0c4daaf48a62c6385ed,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507201924691534319, guid: 4828df480d32e0c4daaf48a62c6385ed,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507201924691534319, guid: 4828df480d32e0c4daaf48a62c6385ed,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507201924691534318, guid: 4828df480d32e0c4daaf48a62c6385ed,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507201924691534318, guid: 4828df480d32e0c4daaf48a62c6385ed,
+        type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4828df480d32e0c4daaf48a62c6385ed, type: 3}

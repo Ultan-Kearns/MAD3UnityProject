@@ -46,7 +46,6 @@ public class Movement : MonoBehaviour
         //takes in the platform positions the radius of the colldier and to see if player is on right layer
         //adapted from tutorial - https://www.youtube.com/watch?v=QGDeafTx5ug&t=477s
         isGrounded = Physics2D.OverlapCircle(isOnPlatform.position, platformRadius, checkLayerPlatform);
- 
         if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
         {
             PlayerJump();
@@ -80,6 +79,15 @@ public class Movement : MonoBehaviour
             {
                 player.gameObject.GetComponent<SpriteRenderer>().sprite = playerModelRight;
             }
+        }
+        //Check if player is on platform if he is move with platform and if he wants to move then call move
+        if (isGrounded == true && Input.GetKeyDown(KeyCode.LeftArrow) == false && Input.GetKeyDown(KeyCode.RightArrow) == false)
+        {
+            //have an input from user
+            var deltaX = Input.GetAxis("Horizontal");
+            //Add the position where player is going to be and give them speed
+            var newXPos = deltaX * speed;
+            rb.velocity = new Vector2(newXPos + PlatformMovement.getSpeed() * -1, rb.velocity.y);
         }
     }
 
