@@ -7,22 +7,39 @@ using UnityEngine.UI;
 public class GameOver : MonoBehaviour
 {
     public Text gameOverText;
-    public static bool isHighScore = false;
+    public bool isHighScore = false;
 
     // Start is called before the first frame update
     void Start()
+    { 
+        //check if highscore
+        Int32.TryParse(PlayerPrefs.GetString("highscore"), out int highscore);
+        Debug.Log("HIGH " + highscore);
+        if (highscore == 0 && Score.scoreNum > 0)
+        {
+            isHighScore = true;
+            PlayerPrefs.SetString("highscore", Score.scoreNum.ToString());
+        }
+        else if (Score.scoreNum > highscore)
+        {
+            isHighScore = true;
+            PlayerPrefs.SetString("highscore", Score.scoreNum.ToString());
+        }
+        checkHighScore();
+    }
+
+    public void checkHighScore()
     {
         Int32.TryParse(PlayerPrefs.GetString("highscore"), out int highscore);
-        gameOverText.text += " You got : " + Score.scoreNum + " points! " + " and got to Wave: " + Wave.getWave();
+
         if (isHighScore == false)
         {
-            gameOverText.text += "\nTry to beat the highscore " + highscore;
+            gameOverText.text +=  "You got to wave: " + Wave.getWave() + " And had a score of: " + Score.scoreNum + "\nTry to beat the highscore " + highscore;
         }
         else
         {
-             gameOverText.text += "\nYOU GOT THE HIGHSCORE: " + highscore;
+            gameOverText.text += "You got to wave: " + Wave.getWave() +  " And had a score of: "  + Score.scoreNum + "\nYOU GOT THE HIGHSCORE: " + highscore;
 
         }
     }
- 
 }

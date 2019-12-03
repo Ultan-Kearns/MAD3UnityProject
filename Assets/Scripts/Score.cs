@@ -11,12 +11,12 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        score.text = "Score: " + scoreNum * scoreMultiplier;
+        score.text = "Score: " + scoreNum;
     }
 
     // Update is called once per frame
     void Update()
     {
-        score.text = "Score: " + scoreNum * scoreMultiplier;
+        score.text = "Score: " + scoreNum;
     }
 }

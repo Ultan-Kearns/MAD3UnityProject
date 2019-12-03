@@ -6,7 +6,7 @@ public class PlatformSpawn : MonoBehaviour
 {
     public GameObject platform;
     public Camera mainCamera;
-    private static float delay = 2.5f;
+    private static float delay = 3.2f;
     public Sprite platform1, platform2, platform3, platform4;
     public void Start()
     {

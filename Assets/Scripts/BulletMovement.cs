@@ -51,10 +51,10 @@ public class BulletMovement : MonoBehaviour
 
     private void newRound()
     {
-        Score.scoreMultiplier = Wave.getWave();
         //reset the bullet count
         Wave.bulletCount = 0;
         Wave.setWave(Wave.getWave() + 1);
+        Score.scoreMultiplier = Wave.getWave();
         speed += 5;
         PlatformMovement.setSpeed(PlatformMovement.getSpeed() + 1.3f);
         PlatformSpawn.setDelay(PlatformSpawn.getDelay() - 0.3f);
