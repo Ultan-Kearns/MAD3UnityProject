@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     Rigidbody2D rb;
     //these detect if the player is touching the ground
-    bool isGrounded;
+    bool isGrounded,isPaused = false;
     public Transform isOnPlatform;
     public float platformRadius;
     public LayerMask checkLayerPlatform;
@@ -37,53 +37,79 @@ public class Movement : MonoBehaviour
         Debug.Log("DIFFICULTY " + Difficulty.getDifficulty());
         //calling here for mute
         Wave.setWave(1);
-        Score.scoreNum = 2000;
      }
 
     // Update is called once per frame
     void Update()
     {
-        PlayerMove();
-        //use a circle collider on bottom of player to check if the player is on a platform
-        //takes in the platform positions the radius of the colldier and to see if player is on right layer
-        //adapted from tutorial - https://www.youtube.com/watch?v=QGDeafTx5ug&t=477s
-        isGrounded = Physics2D.OverlapCircle(isOnPlatform.position, platformRadius, checkLayerPlatform);
-        if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
+        //Don't allow movement if paused
+        if (isPaused != true)
         {
-            PlayerJump();
-        }
-        //check if player is off platform and height
-        if (player.transform.position.y <= -20 && isGrounded == false)
-        {
-            Debug.Log("Assume player is dead - EndGame");
-            Dead();
-        }
-        if (isGrounded == false)
-        {
-            //check if player moves in air and then change to sprites
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            PlayerMove();
+            //use a circle collider on bottom of player to check if the player is on a platform
+            //takes in the platform positions the radius of the colldier and to see if player is on right layer
+            //adapted from tutorial - https://www.youtube.com/watch?v=QGDeafTx5ug&t=477s
+            isGrounded = Physics2D.OverlapCircle(isOnPlatform.position, platformRadius, checkLayerPlatform);
+            if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
             {
-                player.gameObject.GetComponent<SpriteRenderer>().sprite = playerJumpLeft;
+                PlayerJump();
             }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            //check if player is off platform and height
+            if (player.transform.position.y <= -20 && isGrounded == false)
             {
-                player.gameObject.GetComponent<SpriteRenderer>().sprite = playerJumpRight;
+                Debug.Log("Assume player is dead - EndGame");
+                Dead();
+            }
+            if (isGrounded == false)
+            {
+                //check if player moves in air and then change to sprites
+                if (Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    player.gameObject.GetComponent<SpriteRenderer>().sprite = playerJumpLeft;
+                }
+                else if (Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    player.gameObject.GetComponent<SpriteRenderer>().sprite = playerJumpRight;
+                }
+            }
+            else
+            {
+                //change model on ground
+                if (Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    player.gameObject.GetComponent<SpriteRenderer>().sprite = playerModelLeft;
+                }
+                else if (Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    player.gameObject.GetComponent<SpriteRenderer>().sprite = playerModelRight;
+                }
             }
         }
-        if (isGrounded == true)
+        if(Input.GetKeyDown(KeyCode.P))
         {
-            //change model on ground
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            Pause();
+
+        }
+    }
+    private void Pause()
+    {
+        if (isPaused == false)
+        {
+            //pause game
+            Time.timeScale = 0;
+            isPaused = true;
+            Camera.main.GetComponent<AudioSource>().Pause();
+        }
+        else
+        {
+            Time.timeScale = 1;
+            isPaused = false;
+            if (PlayerPrefs.GetString("toggle") == "False")
             {
-                player.gameObject.GetComponent<SpriteRenderer>().sprite = playerModelLeft;
-            }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                player.gameObject.GetComponent<SpriteRenderer>().sprite = playerModelRight;
+                Camera.main.GetComponent<AudioSource>().Play();
             }
         }
     }
-
     private void Dead()
     {
         //also change to gameover screen

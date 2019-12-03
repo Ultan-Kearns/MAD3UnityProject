@@ -24,7 +24,6 @@ public class AudioManager : MonoBehaviour
         }
         else if(checkToggle == "False")
         {
-            Debug.Log("CHECK TOGGLE IN SHITTY FUNC " + checkToggle);            //reload data
             //set audio and audiosource
             if (Wave.getWave() == 1)
                 return;
