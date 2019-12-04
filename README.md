@@ -20,9 +20,12 @@ Unity is a game engine which can be used to create 2D or 3D games, for my purpos
 + Offers the player a difficult yet fair challenge
 
 ## Platforms 
+
 + Windows
 <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.jyn6lj87cqkTl_dIfXTRRQHaGp%26pid%3DApi&f=1" alt = "Windows logo" width="500px" height ="250px"/>
+
 + Linux
 <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.hYr3PjRLGAm7nluRO3PCcwHaIL%26pid%3DApi&f=1" alt = "Linux logo" width="500px" height ="250px"/>
+
 + Mac OS
 <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2Fthumb%2Fb%2Fb9%2FMacOS_original_logo.svg%2F1200px-MacOS_original_logo.svg.png&f=1&nofb=1" alt = "Mac OS logo" width="500px" height ="250px"/>
