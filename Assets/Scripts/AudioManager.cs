@@ -5,23 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
-    public AudioClip medium, hard, harder, hardest;
+    public static AudioClip medium, hard, harder, hardest;
 
     public AudioSource audioSource;
     //check value of options menu mute may link this to pause screen
-    public string checkToggle;
+    public static string checkToggle;
     private void Start()
     {
     }
     //this prevents large amounts of stutter when loading audio
-    public void loadAudio()
+    public static void loadAudio()
     {
         medium = Resources.Load<AudioClip>("Audio/Medium");
         hard = Resources.Load<AudioClip>("Audio/Hard");
         harder = Resources.Load<AudioClip>("Audio/Harder");
         hardest = Resources.Load<AudioClip>("Audio/Hardest");
     }
-    public void setAudio()
+    public static void setAudio()
     {
         checkToggle = PlayerPrefs.GetString("toggle");
         Debug.Log("CHECK TOGGLE " + checkToggle);

@@ -7,6 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
+    private Vector3 position;
+    private float width;
+    private float height;
+
     //variable for player speed
     public float speed = 10f;
     public float jump = 5f;
