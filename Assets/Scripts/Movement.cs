@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     Rigidbody2D rb;
     //these detect if the player is touching the ground
-    bool isGrounded,isPaused = false;
+    bool isGrounded, isPaused = false;
     public Transform isOnPlatform;
     public float platformRadius;
     public LayerMask checkLayerPlatform;
@@ -21,7 +21,7 @@ public class Movement : MonoBehaviour
     public AudioSource audio;
     public AudioClip jumpSound;
     GameObject player;
-    public Sprite playerJumpRight, playerJumpLeft, playerModelRight,playerModelLeft;
+    public Sprite playerJumpRight, playerJumpLeft, playerModelRight, playerModelLeft;
     //change with difficulty 
     public static int lives;
     void Start()
@@ -37,7 +37,7 @@ public class Movement : MonoBehaviour
         Debug.Log("DIFFICULTY " + Difficulty.getDifficulty());
         //calling here for mute
         Wave.setWave(1);
-     }
+    }
 
     // Update is called once per frame
     void Update()
@@ -85,7 +85,7 @@ public class Movement : MonoBehaviour
                 }
             }
         }
-        if(Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             Pause();
 
@@ -140,7 +140,7 @@ public class Movement : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x, posY);
         audio.Play();
     }
-   //decrement lives on hit
+    //decrement lives on hit
     public static void decrementLives(int hit)
     {
         lives -= hit;

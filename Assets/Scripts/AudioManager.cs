@@ -12,7 +12,14 @@ public class AudioManager : MonoBehaviour
     public string checkToggle;
     private void Start()
     {
-  
+    }
+    //this prevents large amounts of stutter when loading audio
+    public void loadAudio()
+    {
+        medium = Resources.Load<AudioClip>("Audio/Medium");
+        hard = Resources.Load<AudioClip>("Audio/Hard");
+        harder = Resources.Load<AudioClip>("Audio/Harder");
+        hardest = Resources.Load<AudioClip>("Audio/Hardest");
     }
     public void setAudio()
     {
@@ -22,40 +29,33 @@ public class AudioManager : MonoBehaviour
         {
             Camera.main.GetComponent<AudioSource>().Pause();
         }
-        else if(checkToggle == "False")
+        else if (checkToggle == "False")
         {
             //set audio and audiosource
             if (Wave.getWave() == 1)
                 return;
             else if (Wave.getWave() >= 2 && Wave.getWave() < 4)
             {
-                medium = Resources.Load<AudioClip>("Audio/Medium");
-
                 //returning sound file but not changing
                 Camera.main.GetComponent<AudioSource>().clip = medium;
                 Camera.main.GetComponent<AudioSource>().Play();
             }
             else if (Wave.getWave() >= 4 && Wave.getWave() < 6)
             {
-                hard = Resources.Load<AudioClip>("Audio/Hard");
-
                 Camera.main.GetComponent<AudioSource>().clip = hard;
                 Camera.main.GetComponent<AudioSource>().Play();
             }
             else if (Wave.getWave() >= 6 && Wave.getWave() < 8)
             {
-                harder = Resources.Load<AudioClip>("Audio/Harder");
-
                 Camera.main.GetComponent<AudioSource>().clip = harder;
                 Camera.main.GetComponent<AudioSource>().Play();
             }
             else
             {
-                hardest = Resources.Load<AudioClip>("Audio/Hardest");
                 Camera.main.GetComponent<AudioSource>().clip = hardest;
                 Camera.main.GetComponent<AudioSource>().Play();
             }
         }
     }
-    
+
 }

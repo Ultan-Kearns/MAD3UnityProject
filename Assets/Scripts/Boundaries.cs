@@ -33,9 +33,10 @@ public class Boundaries : MonoBehaviour
     private void LateUpdate()
     {
         Vector3 viewPos = transform.position;
-  
+        //For some reason I had to come up with an insane mathematical function to get the left
+        //side boundary to work simply doing screenbounds.x * -1 + objectwidth did not work
         viewPos.x = Mathf.Clamp(viewPos.x,
-                                screenBounds.x * -1 + objectWidth ,
+                                screenBounds.x * -1 + screenBounds.x + objectWidth * -8 ,
                                 screenBounds.x - objectWidth);
         viewPos.y = Mathf.Clamp(viewPos.y,
                                   deathLimit,

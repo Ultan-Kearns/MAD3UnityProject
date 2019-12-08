@@ -7,6 +7,10 @@ public class Wave : MonoBehaviour
     public Text waveText;
     public static int bulletCount = 0;
     static AudioManager am = new AudioManager();
+    private void Start()
+    {
+        am.loadAudio();
+    }
     // Update is called once per frame
     void Update()
     {
