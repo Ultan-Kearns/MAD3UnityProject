@@ -29,3 +29,6 @@ Unity is a game engine which can be used to create 2D or 3D games, for my purpos
 
 + Mac OS
 <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2Fthumb%2Fb%2Fb9%2FMacOS_original_logo.svg%2F1200px-MacOS_original_logo.svg.png&f=1&nofb=1" alt = "Mac OS logo" width="500px" height ="250px"/>
+
+### Notes
+All music is referenced in the Developer Diary as it was not made by me, all assets were made by the designer of the game.
