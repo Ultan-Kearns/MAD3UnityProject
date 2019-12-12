@@ -28,8 +28,10 @@ public class Movement : MonoBehaviour
     public Sprite playerJumpRight, playerJumpLeft, playerModelRight, playerModelLeft;
     //change with difficulty 
     public static int lives;
+    private float ScreenWidth;
     void Start()
     {
+        ScreenWidth = Screen.width;
         rb = GetComponent<Rigidbody2D>();
         //get audio source
         audio = GetComponent<AudioSource>();
@@ -49,6 +51,7 @@ public class Movement : MonoBehaviour
         //Don't allow movement if paused
         if (isPaused != true)
         {
+
             PlayerMove();
             //use a circle collider on bottom of player to check if the player is on a platform
             //takes in the platform positions the radius of the colldier and to see if player is on right layer
@@ -88,6 +91,24 @@ public class Movement : MonoBehaviour
                     player.gameObject.GetComponent<SpriteRenderer>().sprite = playerModelRight;
                 }
             }
+            //android controls -- refactored from source  https://pressstart.vip/tutorials/2018/01/29/7/unity-mobile-touch-controls.html
+            int i = 0;
+            //loop over every touch found
+            while (i < Input.touchCount)
+            {
+                if (Input.GetTouch(i).position.x > ScreenWidth / 2)
+                {
+                    //move right
+                    PlayerMove();
+                }
+                if (Input.GetTouch(i).position.x < ScreenWidth / 2)
+                {
+                    //move left
+                    PlayerMove();
+                }
+                ++i;
+            }
+
         }
         if (Input.GetKeyDown(KeyCode.P))
         {
